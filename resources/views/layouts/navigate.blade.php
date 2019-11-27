@@ -3,7 +3,7 @@
         <h1 class="logo-wrapper">
             <a class="brand-logo darken-1" href="{{ url('/') }}">
                 <img src="{{ asset('app-assets/images/logo/materialize-logo-color.png') }}" alt="materialize logo"/>
-                <span class="logo-text hide-on-med-and-down">Softball</span>
+                <span class="logo-text hide-on-med-and-down">Activo Fijo</span>
             </a>
             <a class="navbar-toggler" href="#">
                 <i class="material-icons">radio_button_checked</i>

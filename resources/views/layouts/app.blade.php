@@ -3,7 +3,7 @@
 <!-- BEGIN: Head-->
 <head>
     @include('layouts.head')
-    <title>Softball</title>
+    <title>@yield('title')</title>
     <!-- END: Custom CSS-->
 </head>
 <!-- END: Head-->
