@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1:3306
+- Tiempo de generación: 10-12-2019 a las 02:51:06
+- Versión del servidor: 5.7.24-log
+- Versión de PHP: 7.3.1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="activofijo" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="municipalities">
+                CREATE TABLE `municipalities` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `state_id` bigint(20) unsigned NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `municipalities_state_id_foreign` (`state_id`)
+                ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'activofijo'
+    -->
+    <database name="activofijo">
+        <!-- Tabla municipalities -->
+        <table name="municipalities">
+            <column name="id">1</column>
+            <column name="name">Comondú</column>
+            <column name="state_id">1</column>
+            <column name="created_at">2019-12-10 02:49:11</column>
+            <column name="updated_at">2019-12-10 02:49:11</column>
+        </table>
+        <table name="municipalities">
+            <column name="id">2</column>
+            <column name="name">Mulegé</column>
+            <column name="state_id">1</column>
+            <column name="created_at">2019-12-10 02:49:17</column>
+            <column name="updated_at">2019-12-10 02:49:17</column>
+        </table>
+        <table name="municipalities">
+            <column name="id">3</column>
+            <column name="name">La Paz</column>
+            <column name="state_id">1</column>
+            <column name="created_at">2019-12-10 02:49:22</column>
+            <column name="updated_at">2019-12-10 02:49:22</column>
+        </table>
+        <table name="municipalities">
+            <column name="id">4</column>
+            <column name="name">Los Cabos</column>
+            <column name="state_id">1</column>
+            <column name="created_at">2019-12-10 02:49:29</column>
+            <column name="updated_at">2019-12-10 02:49:29</column>
+        </table>
+        <table name="municipalities">
+            <column name="id">5</column>
+            <column name="name">Loreto</column>
+            <column name="state_id">1</column>
+            <column name="created_at">2019-12-10 02:49:34</column>
+            <column name="updated_at">2019-12-10 02:49:34</column>
+        </table>
+    </database>
+</pma_xml_export>

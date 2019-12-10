@@ -3,7 +3,7 @@
  */
 
 $(function() {
-  $("select").formSelect();
+  // $("select").formSelect();
 
   $(".timepicker").timepicker({
      default: "now", // Set default time

@@ -15,7 +15,7 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key');
+            $table->string('unity');
             $table->string('description');
             $table->unsignedBigInteger('state_id');
             $table->foreign('state_id')->references('id')->on('states');

@@ -45,12 +45,18 @@
         </li> --}}
         {{-- <li class="bold"><a class="waves-effect waves-cyan " href="app-email.html"><i class="material-icons">mail_outline</i><span class="menu-title" data-i18n="">Mail</span><span class="badge new badge pill pink accent-2 float-right mr-10">5</span></a>
         </li> --}}
-        {{-- <li class="bold">
+        <li class="bold">
             <a class="waves-effect waves-cyan {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">
                 <i class="material-icons">home</i>
                 <span class="menu-title" data-i18n="">Inicio</span>
             </a>
-        </li> --}}
+        </li>
+        <li class="bold">
+            <a class="waves-effect waves-cyan {{ Request::is('users') ? 'active' : '' }}" href="{{ url('users') }}">
+                <i class="material-icons">user</i>
+                <span class="menu-title" data-i18n="">Empleados</span>
+            </a>
+        </li>
     </ul>
     <div class="navigation-background"></div>
     <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out">

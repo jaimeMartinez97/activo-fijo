@@ -1,0 +1,2344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1:3306
+- Tiempo de generación: 10-12-2019 a las 04:09:04
+- Versión del servidor: 5.7.24-log
+- Versión de PHP: 7.3.1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="activofijo" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `father_lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `mother_lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `state` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `unity` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `job` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `character` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `reason` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `email_verified_at` timestamp NULL DEFAULT NULL,
+                  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `role_id` bigint(20) unsigned DEFAULT NULL,
+                  `assignment_id` bigint(20) unsigned DEFAULT NULL,
+                  `zone_coordinators` bigint(20) unsigned DEFAULT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `users_email_unique` (`email`),
+                  KEY `users_role_id_foreign` (`role_id`),
+                  KEY `users_assignment_id_foreign` (`assignment_id`),
+                  KEY `users_zone_coordinators_foreign` (`zone_coordinators`)
+                ) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'activofijo'
+    -->
+    <database name="activofijo">
+        <!-- Tabla users -->
+        <table name="users">
+            <column name="id">1</column>
+            <column name="name">JUAN JESUS</column>
+            <column name="father_lastname">AMADOR</column>
+            <column name="mother_lastname">BELTRAN</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">20</column>
+            <column name="job">1</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">2</column>
+            <column name="name">ILIANA IRASHEMA</column>
+            <column name="father_lastname">AGUIAR</column>
+            <column name="mother_lastname">GONZALEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">2</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">3</column>
+            <column name="name">MARIA ANTONIA</column>
+            <column name="father_lastname">BELTRAN</column>
+            <column name="mother_lastname">HIRALES</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">1</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">25</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">4</column>
+            <column name="name">MARTINA</column>
+            <column name="father_lastname">LEON</column>
+            <column name="mother_lastname">AVILES</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">85</column>
+            <column name="job">2</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">5</column>
+            <column name="name">CECILIA</column>
+            <column name="father_lastname">ROMERO</column>
+            <column name="mother_lastname">LEON</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">30</column>
+            <column name="job">4</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">6</column>
+            <column name="name">ALEJANDRO</column>
+            <column name="father_lastname">SMITH</column>
+            <column name="mother_lastname">CAMACHO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">1</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">7</column>
+            <column name="name">JOSEFINA</column>
+            <column name="father_lastname">COSIO</column>
+            <column name="mother_lastname">AMADOR</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">30</column>
+            <column name="job">2</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">85</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">8</column>
+            <column name="name">ANA ALICIA</column>
+            <column name="father_lastname">ESPINO</column>
+            <column name="mother_lastname">COSIO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">5</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">9</column>
+            <column name="name">MARIA ANTONIA</column>
+            <column name="father_lastname">DE LA TOBA</column>
+            <column name="mother_lastname">CAREAGA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">4</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">85</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">10</column>
+            <column name="name">ROGELIO</column>
+            <column name="father_lastname">PEREZ</column>
+            <column name="mother_lastname">RAMIREZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">4</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">11</column>
+            <column name="name">MARIA EUGENIA</column>
+            <column name="father_lastname">PAZOS</column>
+            <column name="mother_lastname">COBOS</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">5</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">12</column>
+            <column name="name">PEDRO</column>
+            <column name="father_lastname">VEGA</column>
+            <column name="mother_lastname">PONCE</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">6</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">13</column>
+            <column name="name">DELFINA</column>
+            <column name="father_lastname">RIVAS</column>
+            <column name="mother_lastname">ROMERO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">77</column>
+            <column name="job">7</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">14</column>
+            <column name="name">GABRIEL </column>
+            <column name="father_lastname">ESPINOZA</column>
+            <column name="mother_lastname">AMADOR</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">9</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">15</column>
+            <column name="name">JAIME</column>
+            <column name="father_lastname">CARREON</column>
+            <column name="mother_lastname">CONTRERAS</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">10</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">16</column>
+            <column name="name">ABRAHAM</column>
+            <column name="father_lastname">RODRIGUEZ</column>
+            <column name="mother_lastname">MANRIQUEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">30</column>
+            <column name="job">2</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">93</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">17</column>
+            <column name="name">RUBEN</column>
+            <column name="father_lastname">GARCIA</column>
+            <column name="mother_lastname">ALVAREZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">11</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">18</column>
+            <column name="name">GUADALUPE</column>
+            <column name="father_lastname">PERALTA</column>
+            <column name="mother_lastname">AGUNDEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">12</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">19</column>
+            <column name="name">HEBER</column>
+            <column name="father_lastname">NAVARRO</column>
+            <column name="mother_lastname">MENDOZA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">13</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">20</column>
+            <column name="name">JORGE</column>
+            <column name="father_lastname">GUTIERREZ</column>
+            <column name="mother_lastname">BA?ALES</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">14</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">21</column>
+            <column name="name">MARTHA DEL CARMEN</column>
+            <column name="father_lastname">GARCIA</column>
+            <column name="mother_lastname">AGUNDEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">20</column>
+            <column name="job">1</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">85</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">22</column>
+            <column name="name">ZEFERINO</column>
+            <column name="father_lastname">SARI?ANA</column>
+            <column name="mother_lastname">CAMPA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">75</column>
+            <column name="job">15</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">23</column>
+            <column name="name">ROSARIO ARMIDA</column>
+            <column name="father_lastname">ROMERO</column>
+            <column name="mother_lastname">TOLEDO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">16</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">24</column>
+            <column name="name">MARIA DE LOS ANGELES</column>
+            <column name="father_lastname">ESTRADA</column>
+            <column name="mother_lastname">CASTRO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">17</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">25</column>
+            <column name="name">FRANCISCO JAVIER</column>
+            <column name="father_lastname">LARIOS</column>
+            <column name="mother_lastname">ANGULO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">18</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">26</column>
+            <column name="name">NORA</column>
+            <column name="father_lastname">ZAVALA</column>
+            <column name="mother_lastname">GONZALEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">75</column>
+            <column name="job">19</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">27</column>
+            <column name="name">JOSE DE JESUS</column>
+            <column name="father_lastname">BURGOIN</column>
+            <column name="mother_lastname">BURGOIN</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">75</column>
+            <column name="job">20</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">28</column>
+            <column name="name">JOSE INES</column>
+            <column name="father_lastname">HIGUERA</column>
+            <column name="mother_lastname">GUTIERREZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">21</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">29</column>
+            <column name="name">ESTEBAN</column>
+            <column name="father_lastname">ESCOBEDO</column>
+            <column name="mother_lastname">PLANTER</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">22</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">30</column>
+            <column name="name">ROSALIA</column>
+            <column name="father_lastname">GARCIA</column>
+            <column name="mother_lastname">AMADOR</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">23</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">31</column>
+            <column name="name">MARIA ELENA</column>
+            <column name="father_lastname">NU?EZ</column>
+            <column name="mother_lastname">GERALDO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">7</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">32</column>
+            <column name="name">ALMA SOFIA</column>
+            <column name="father_lastname">ROSAS</column>
+            <column name="mother_lastname">AMADOR</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">9</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">33</column>
+            <column name="name">DORA OLIVIA</column>
+            <column name="father_lastname">CHAVEZ</column>
+            <column name="mother_lastname">ZAPATA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">0</column>
+            <column name="character">G</column>
+            <column name="reason">AA</column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">34</column>
+            <column name="name">YESICA ISELA</column>
+            <column name="father_lastname">OLIVAS</column>
+            <column name="mother_lastname">ROSAS</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">8</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">35</column>
+            <column name="name">SINTIA DELI</column>
+            <column name="father_lastname">SARABIA</column>
+            <column name="mother_lastname">AGUILAR</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">20</column>
+            <column name="job">1</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">36</column>
+            <column name="name">AMERICA</column>
+            <column name="father_lastname">HOLMOS</column>
+            <column name="mother_lastname">MONTA?O</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">74</column>
+            <column name="job">24</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">37</column>
+            <column name="name">FELIX ENRIQUE</column>
+            <column name="father_lastname">COSIO</column>
+            <column name="mother_lastname">GONZALEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">75</column>
+            <column name="job">25</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">38</column>
+            <column name="name">MARISOL</column>
+            <column name="father_lastname">TRASVI?A</column>
+            <column name="mother_lastname">TRASVI?A</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">30</column>
+            <column name="job">4</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">85</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">39</column>
+            <column name="name">SELED HORONAIM</column>
+            <column name="father_lastname">LOPEZ</column>
+            <column name="mother_lastname">ALVAREZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">30</column>
+            <column name="job">3</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">40</column>
+            <column name="name">HUGO</column>
+            <column name="father_lastname">CASTA?EDA</column>
+            <column name="mother_lastname">GIRON</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">85</column>
+            <column name="job">1</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">93</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">41</column>
+            <column name="name">VERONICA TERESA</column>
+            <column name="father_lastname">CARDENAS</column>
+            <column name="mother_lastname">HINOJOSA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">85</column>
+            <column name="job">2</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">42</column>
+            <column name="name">VICENTE</column>
+            <column name="father_lastname">GUERRERO</column>
+            <column name="mother_lastname">ORTEGA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">85</column>
+            <column name="job">3</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">43</column>
+            <column name="name">JOSEFINA VALENTINA</column>
+            <column name="father_lastname">CASTRO</column>
+            <column name="mother_lastname">GONZALEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">11</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">44</column>
+            <column name="name">LETICIA</column>
+            <column name="father_lastname">LEON</column>
+            <column name="mother_lastname">AVILES</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">30</column>
+            <column name="job">7</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">45</column>
+            <column name="name">JESUS CATARINA</column>
+            <column name="father_lastname">DOMINGUEZ</column>
+            <column name="mother_lastname">GONZALEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">8</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">46</column>
+            <column name="name">PAULA</column>
+            <column name="father_lastname">MIRANDA</column>
+            <column name="mother_lastname">MARTINEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">12</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">47</column>
+            <column name="name">RUBEN DARIO</column>
+            <column name="father_lastname">GONZALEZ</column>
+            <column name="mother_lastname">MEZA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">3</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">59</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">48</column>
+            <column name="name">MIREYA ARELY</column>
+            <column name="father_lastname">HIGUERA</column>
+            <column name="mother_lastname">RODRIGUEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">4</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">49</column>
+            <column name="name">JUAN CARLOS</column>
+            <column name="father_lastname">OLIVAS</column>
+            <column name="mother_lastname">ROSAS</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">1</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">95</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">50</column>
+            <column name="name">RICARDO</column>
+            <column name="father_lastname">AJA</column>
+            <column name="mother_lastname">CARBALLO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">74</column>
+            <column name="job">26</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">51</column>
+            <column name="name">ROLANDO</column>
+            <column name="father_lastname">REDONA</column>
+            <column name="mother_lastname">AGUILAR</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">33</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">52</column>
+            <column name="name">MARIA ELENA</column>
+            <column name="father_lastname">PEREZ</column>
+            <column name="mother_lastname">MARTINEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">27</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">53</column>
+            <column name="name">BLANCA ESTELA</column>
+            <column name="father_lastname">ROMERO</column>
+            <column name="mother_lastname">AGUILAR</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">5</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">54</column>
+            <column name="name">JAIME</column>
+            <column name="father_lastname">CASTRO</column>
+            <column name="mother_lastname">GONZALEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">74</column>
+            <column name="job">0</column>
+            <column name="character">G</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">55</column>
+            <column name="name">GUADALUPE</column>
+            <column name="father_lastname">CORTEZ</column>
+            <column name="mother_lastname">ROMERO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">29</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">56</column>
+            <column name="name">EUFEMIA</column>
+            <column name="father_lastname">MENDOZA</column>
+            <column name="mother_lastname">OJEDA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">75</column>
+            <column name="job">30</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">57</column>
+            <column name="name">FRANCISCO MARTIN</column>
+            <column name="father_lastname">ACEVEDO</column>
+            <column name="mother_lastname">BURGOIN</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">6</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">93</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">58</column>
+            <column name="name">IRMA NOHEMI</column>
+            <column name="father_lastname">ROMERO</column>
+            <column name="mother_lastname">LOERA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">1</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">61</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">59</column>
+            <column name="name">YOLANDA </column>
+            <column name="father_lastname">SAUCEDO</column>
+            <column name="mother_lastname">TALAMANTES</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">7</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">60</column>
+            <column name="name">JUANA ARACELI</column>
+            <column name="father_lastname">MEKLER</column>
+            <column name="mother_lastname">AGUILERA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">31</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">61</column>
+            <column name="name">RODRIGO RAMON</column>
+            <column name="father_lastname">LUCERO</column>
+            <column name="mother_lastname">CAMACHO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">3</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">62</column>
+            <column name="name">VICTORIA</column>
+            <column name="father_lastname">ORTIZ</column>
+            <column name="mother_lastname">CANTO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">74</column>
+            <column name="job">28</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">63</column>
+            <column name="name">JOSE ALFREDO</column>
+            <column name="father_lastname">HERNANDEZ</column>
+            <column name="mother_lastname">ZAMORA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">76</column>
+            <column name="job">32</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">64</column>
+            <column name="name">ALONDRA DEL ROCIO</column>
+            <column name="father_lastname">CADENA</column>
+            <column name="mother_lastname">SARABIA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">85</column>
+            <column name="job">4</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">47</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">65</column>
+            <column name="name">LUIS ENRIQUE</column>
+            <column name="father_lastname">MENDEZ</column>
+            <column name="mother_lastname">CHAVEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">30</column>
+            <column name="job">1</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">66</column>
+            <column name="name">KARLA KARINA</column>
+            <column name="father_lastname">DOMINGUEZ</column>
+            <column name="mother_lastname">CASTRO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">9</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">67</column>
+            <column name="name">MARTA ELVA</column>
+            <column name="father_lastname">LARRETA</column>
+            <column name="mother_lastname">LIZARRAGA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">76</column>
+            <column name="job">0</column>
+            <column name="character">H</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">68</column>
+            <column name="name">CRISTHIAN JESUS</column>
+            <column name="father_lastname">OJEDA</column>
+            <column name="mother_lastname">AGUNDEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">20</column>
+            <column name="job">2</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">69</column>
+            <column name="name">OLGA PATRICIA</column>
+            <column name="father_lastname">VERDUGO</column>
+            <column name="mother_lastname">CERVANTES</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">8</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">70</column>
+            <column name="name">FRANK</column>
+            <column name="father_lastname">AGUIAR</column>
+            <column name="mother_lastname">BAEZA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">8</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">71</column>
+            <column name="name">LUZ ARIADNA</column>
+            <column name="father_lastname">BONILLA</column>
+            <column name="mother_lastname">SANDEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">2</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">43</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">72</column>
+            <column name="name">ROSA ELENA</column>
+            <column name="father_lastname">CASTRO</column>
+            <column name="mother_lastname">VILLA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">3</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">47</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">73</column>
+            <column name="name">ANA MARIA</column>
+            <column name="father_lastname">ROSAS</column>
+            <column name="mother_lastname">MAYORAL</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">20</column>
+            <column name="job">56</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">74</column>
+            <column name="name">FRANCISCO JAVIER</column>
+            <column name="father_lastname">MARRUFFO</column>
+            <column name="mother_lastname">SAVIN</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">5</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">43</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">75</column>
+            <column name="name">DAVID ALEJANDRO</column>
+            <column name="father_lastname">LEAL</column>
+            <column name="mother_lastname">MORA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">0</column>
+            <column name="character">A</column>
+            <column name="reason">AA</column>
+            <column name="position">A1</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">76</column>
+            <column name="name">ANTONIO JONATHAN</column>
+            <column name="father_lastname">MENDEZ</column>
+            <column name="mother_lastname">MARQUEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">0</column>
+            <column name="character">A</column>
+            <column name="reason">AA</column>
+            <column name="position">A1</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">77</column>
+            <column name="name">LUIS ENRIQUE</column>
+            <column name="father_lastname">REYES</column>
+            <column name="mother_lastname">LOPEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">0</column>
+            <column name="character">A</column>
+            <column name="reason">AA</column>
+            <column name="position">A2</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">78</column>
+            <column name="name">JOS? JORGE</column>
+            <column name="father_lastname">SUAREZ</column>
+            <column name="mother_lastname">CORONA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">0</column>
+            <column name="character">A</column>
+            <column name="reason">AA</column>
+            <column name="position">A3</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">79</column>
+            <column name="name">OSCAR EDEL</column>
+            <column name="father_lastname">RIVERA</column>
+            <column name="mother_lastname">FAVELA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">77</column>
+            <column name="job">0</column>
+            <column name="character">A</column>
+            <column name="reason">AA</column>
+            <column name="position">A3</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">80</column>
+            <column name="name">OSCAR</column>
+            <column name="father_lastname">LICEAGA</column>
+            <column name="mother_lastname">MORA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">0</column>
+            <column name="character">A</column>
+            <column name="reason">AA</column>
+            <column name="position">A2</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">81</column>
+            <column name="name">ROCIO</column>
+            <column name="father_lastname">RUIZ</column>
+            <column name="mother_lastname">RAMOS</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">5</column>
+            <column name="character">C</column>
+            <column name="reason">AA</column>
+            <column name="position">93</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">82</column>
+            <column name="name">MARTA ELVA</column>
+            <column name="father_lastname">LARRETA</column>
+            <column name="mother_lastname">LIZARRAGA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">76</column>
+            <column name="job">3</column>
+            <column name="character">B</column>
+            <column name="reason">AA</column>
+            <column name="position">82</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">83</column>
+            <column name="name">ANGELES GABRIELA</column>
+            <column name="father_lastname">DOMINGUEZ</column>
+            <column name="mother_lastname">MANZANO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">1</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">47</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">84</column>
+            <column name="name">VERONICA MARIA</column>
+            <column name="father_lastname">FORT</column>
+            <column name="mother_lastname">CAMACHO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">3</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">43</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">85</column>
+            <column name="name">AARON AMADO</column>
+            <column name="father_lastname">RODRIGUEZ</column>
+            <column name="mother_lastname">BETANCOURT</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">2</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">47</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">86</column>
+            <column name="name">LISSVIA GUADALUPE</column>
+            <column name="father_lastname">SANCHEZ</column>
+            <column name="mother_lastname">RONDERO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">1</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">59</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">87</column>
+            <column name="name">LUIS FELIPE</column>
+            <column name="father_lastname">GUTIERREZ</column>
+            <column name="mother_lastname">BERNAL</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">1</column>
+            <column name="character">C</column>
+            <column name="reason"></column>
+            <column name="position">91</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">88</column>
+            <column name="name">VICTOR</column>
+            <column name="father_lastname">ZAVALA</column>
+            <column name="mother_lastname">JIMENEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">1</column>
+            <column name="character">C</column>
+            <column name="reason"></column>
+            <column name="position">92</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">89</column>
+            <column name="name">DAVID RICARDO</column>
+            <column name="father_lastname">LOMAS</column>
+            <column name="mother_lastname">CARDENAS</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">6</column>
+            <column name="character">C</column>
+            <column name="reason"></column>
+            <column name="position">88</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">90</column>
+            <column name="name">MAURICIO</column>
+            <column name="father_lastname">CITAL</column>
+            <column name="mother_lastname">MORA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">20</column>
+            <column name="job">4</column>
+            <column name="character">C</column>
+            <column name="reason"></column>
+            <column name="position">93</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">91</column>
+            <column name="name">MARIA AZUCENA</column>
+            <column name="father_lastname">LARA</column>
+            <column name="mother_lastname">ROMERO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">4</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">43</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">92</column>
+            <column name="name">MARIA DEL PILAR</column>
+            <column name="father_lastname">COTA</column>
+            <column name="mother_lastname">AVALOS</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">4</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">59</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">93</column>
+            <column name="name">KAREN YURIDIA</column>
+            <column name="father_lastname">LEON</column>
+            <column name="mother_lastname">CASTRO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">1</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">59</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">94</column>
+            <column name="name">CECILIA</column>
+            <column name="father_lastname">COLLINS</column>
+            <column name="mother_lastname">CASTRO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">2</column>
+            <column name="character">C</column>
+            <column name="reason"></column>
+            <column name="position">92</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">95</column>
+            <column name="name">MARIO ANTONIO</column>
+            <column name="father_lastname">FUENTES</column>
+            <column name="mother_lastname">MEZA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">1</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">21</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">96</column>
+            <column name="name">KARLA</column>
+            <column name="father_lastname">ZARATE</column>
+            <column name="mother_lastname">GERALDO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">80</column>
+            <column name="job">2</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">43</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">97</column>
+            <column name="name">JORGE ALBERTO</column>
+            <column name="father_lastname">CORNEJO</column>
+            <column name="mother_lastname"></column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">71</column>
+            <column name="job">4</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">98</column>
+            <column name="name">LUZ BERENICE</column>
+            <column name="father_lastname">GONZALEZ</column>
+            <column name="mother_lastname">GONZALEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">73</column>
+            <column name="job">6</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">99</column>
+            <column name="name">SORAIDA</column>
+            <column name="father_lastname">VELAZQUEZ</column>
+            <column name="mother_lastname">MONTALVO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">72</column>
+            <column name="job">5</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">70</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">100</column>
+            <column name="name">MONICA ADELA</column>
+            <column name="father_lastname">MAYORAL</column>
+            <column name="mother_lastname">GERALDO</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">2</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">59</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">101</column>
+            <column name="name">MIGUEL ANGEL</column>
+            <column name="father_lastname">CAREAGA</column>
+            <column name="mother_lastname">TOYES</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">30</column>
+            <column name="job">10</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">81</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">102</column>
+            <column name="name">JUAN ISRAEL</column>
+            <column name="father_lastname">CUEVAS</column>
+            <column name="mother_lastname">PERALTA</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">3</column>
+            <column name="character">C</column>
+            <column name="reason"></column>
+            <column name="position">92</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">103</column>
+            <column name="name">PEDRO GRACIANO</column>
+            <column name="father_lastname">OSUNA</column>
+            <column name="mother_lastname">LOPEZ</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">11</column>
+            <column name="job">1</column>
+            <column name="character">C</column>
+            <column name="reason"></column>
+            <column name="position">97</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+        <table name="users">
+            <column name="id">104</column>
+            <column name="name">JORGE ALBERTO</column>
+            <column name="father_lastname">RUIZ</column>
+            <column name="mother_lastname">VARGAS</column>
+            <column name="state">VERDADERO
+</column>
+            <column name="unity">90</column>
+            <column name="job">5</column>
+            <column name="character">B</column>
+            <column name="reason"></column>
+            <column name="position">47</column>
+            <column name="email">NULL</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">NULL</column>
+            <column name="remember_token">NULL</column>
+            <column name="role_id">NULL</column>
+            <column name="assignment_id">NULL</column>
+            <column name="zone_coordinators">NULL</column>
+            <column name="created_at">2019-12-10 04:07:44</column>
+            <column name="updated_at">2019-12-10 04:07:44</column>
+        </table>
+    </database>
+</pma_xml_export>

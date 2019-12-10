@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Assignment;
+use App\ZoneCoordinator;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +17,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        $assignments = Assignment::all();
+        $zone_coordinators = ZoneCoordinator::all();
+
+        return view('users.index', compact('users', 'assignments', 'zone_coordinators'));
     }
 
     /**
@@ -43,7 +51,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
         //
     }
@@ -54,7 +62,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         //
     }
@@ -66,7 +74,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -77,7 +85,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
     }

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Assignment;
+use App\Locality;
+use App\Municipality;
+use App\State;
 use Illuminate\Http\Request;
 
 class AssignmentController extends Controller
@@ -14,7 +17,12 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        //
+        $assignments = Assignment::with('locality', 'municipality', 'state');
+        $localities = Locality::all();
+        $municipalities = Municipality::all();
+        $states = State::all();
+
+        return view('assignments.index', compact('assignments', 'localities', 'municipalities', 'states'));
     }
 
     /**
@@ -35,7 +43,9 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Assignment::create($request->all());
+
+        return redirect('assignments');
     }
 
     /**
@@ -46,7 +56,7 @@ class AssignmentController extends Controller
      */
     public function show(Assignment $assignment)
     {
-        //
+        return response()->json($assignment);
     }
 
     /**
@@ -69,7 +79,9 @@ class AssignmentController extends Controller
      */
     public function update(Request $request, Assignment $assignment)
     {
-        //
+        $assignment->update($request->all());
+
+        return redirect('assignments');
     }
 
     /**
