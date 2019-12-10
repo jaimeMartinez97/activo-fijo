@@ -15,6 +15,11 @@ class CreateCommunitySquaresTable extends Migration
     {
         Schema::create('community_squares', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('address');
+            $table->string('colony');
+            $table->string('zip_code');
+            $table->string('phone');
             $table->timestamps();
         });
     }

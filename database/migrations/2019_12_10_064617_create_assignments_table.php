@@ -15,6 +15,14 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('key');
+            $table->string('description');
+            $table->unsignedBigInteger('state_id');
+            $table->foreign('state_id')->references('id')->on('states');
+            $table->unsignedBigInteger('locality_id');
+            $table->foreign('locality_id')->references('id')->on('localities');
+            $table->unsignedBigInteger('municipality_id');
+            $table->foreign('municipality_id')->references('id')->on('municipalities');
             $table->timestamps();
         });
     }

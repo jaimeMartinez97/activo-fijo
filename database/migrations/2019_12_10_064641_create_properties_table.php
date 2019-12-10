@@ -15,6 +15,19 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('brand');
+            $table->string('model');
+            $table->text('general_description');
+            $table->string('color');
+            $table->boolean('given');
+            $table->text('vehicle_description')->nullable();
+            $table->text('full_description');
+            $table->string('supplier');
+            $table->string('price');
+            $table->unsignedBigInteger('object_expenses_id');
+            $table->foreign('object_expenses_id')->references('id')->on('object_expenses');
+            $table->unsignedBigInteger('property_types_id');
+            $table->foreign('property_types_id')->references('id')->on('property_types');
             $table->timestamps();
         });
     }

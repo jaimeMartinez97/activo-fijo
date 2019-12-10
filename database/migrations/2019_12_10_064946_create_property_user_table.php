@@ -14,7 +14,12 @@ class CreatePropertyUserTable extends Migration
     public function up()
     {
         Schema::create('property_user', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->unsignedBigInteger('property_id');
+            $table->foreign('property_id')->references('id')->on('properties');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('inventary_number');
+            $table->bigIncrements('serial_number');
             $table->timestamps();
         });
     }

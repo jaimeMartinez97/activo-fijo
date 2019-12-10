@@ -15,6 +15,8 @@ class CreateObjectExpensesTable extends Migration
     {
         Schema::create('object_expenses', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('COG');
+            $table->text('description');
             $table->timestamps();
         });
     }
