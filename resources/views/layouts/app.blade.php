@@ -42,10 +42,10 @@
     <script src="{{ asset('app-assets/js/plugins.js') }}" type="text/javascript"></script>
     <script src="{{ asset('app-assets/js/custom/custom-script.js') }}" type="text/javascript"></script>
     <!-- END THEME  JS-->
-    
+
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="{{ asset('app-assets/js/scripts/advance-ui-modals.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('app-assets/js/scripts/form-validation.js') }}" type="text/javascript"></script>
+    {{-- <script src="{{ asset('app-assets/js/scripts/form-validation.js') }}" type="text/javascript"></script> --}}
     @yield('level')
     <!-- END PAGE LEVEL JS-->
   </body>

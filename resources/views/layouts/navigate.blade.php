@@ -53,8 +53,14 @@
         </li>
         <li class="bold">
             <a class="waves-effect waves-cyan {{ Request::is('users') ? 'active' : '' }}" href="{{ url('users') }}">
-                <i class="material-icons">user</i>
+                <i class="material-icons">assignment_ind</i>
                 <span class="menu-title" data-i18n="">Empleados</span>
+            </a>
+        </li>
+        <li class="bold">
+            <a class="waves-effect waves-cyan {{ Request::is('assignments') ? 'active' : '' }}" href="{{ url('assignments') }}">
+                <i class="material-icons">account_balance</i>
+                <span class="menu-title" data-i18n="">Adscripciones</span>
             </a>
         </li>
     </ul>

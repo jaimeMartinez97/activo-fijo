@@ -21,7 +21,7 @@
                                         <table id="page-length-option" class="display">
                                             <thead>
                                                 <tr>
-                                                    <th>Clave</th>
+                                                    <th>Unidad</th>
                                                     <th>Descripción</th>
                                                     <th>Localidad</th>
                                                     <th>Municipio</th>
@@ -32,10 +32,10 @@
                                             <tbody>
                                                 @foreach ($assignments as $assignment)
                                                     <tr>
-                                                        <td>{{ $assignment->key }}</td>
+                                                        <td>{{ $assignment->unity }}</td>
                                                         <td>{{ $assignment->description }}</td>
                                                         <td>{{ $assignment->locality->name }}</td>
-                                                        <td>{{ $assignment->municipality->name }}</td>
+                                                        <td>{{ $assignment->municipality->name}}</td>
                                                         <td>{{ $assignment->state->name }}</td>
                                                         <td>
                                                             <a class="edit mb-6 btn-floating waves-effect waves-light blue lightrn-1 modal-trigger" href="#modalUpdate" data-id="{{ $assignment->id }}">
@@ -50,7 +50,7 @@
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                    <th>Clave</th>
+                                                    <th>Unidad</th>
                                                     <th>Descripción</th>
                                                     <th>Localidad</th>
                                                     <th>Municipio</th>
@@ -76,39 +76,39 @@
                 @csrf
                 <div class="row">
                     <div class="input-field col s6">
-                        <input name="key" type="text" class="validate" required>
-                        <label>Clave</label>
+                        <input name="unity" type="text" class="validate" required>
+                        <label>Unidad</label>
                     </div>
                     <div class="input-field col s6">
-                        <input name="job" type="text" class="validate" required>
+                        <input name="description" type="text" class="validate" required>
                         <label>Descripción</label>
                     </div>
-                    <div class="input-field col s6">
-                        <select name="locality_id" required>
+                    <div class="col s6">
+                        <label>Localidad</label>
+                        <select name="locality_id" class="browser-default" required>
                             <option value="" disabled selected>Selecciona una localidad</option>
                             @foreach ($localities as $locality)
                                 <option value="{{ $locality->id }}">{{ $locality->name }}</option>
                             @endforeach
                         </select>
-                        <label>Localidad</label>
                     </div>
-                    <div class="input-field col s6">
-                        <select name="municipality_id" required>
+                    <div class="col s6">
+                        <label>Municipio</label>
+                        <select name="municipality_id" class="browser-default" required>
                             <option value="" disabled selected>Selecciona un municipio</option>
                             @foreach ($municipalities as $municipality)
                                 <option value="{{ $municipality->id }}">{{ $municipality->name }}</option>
                             @endforeach
                         </select>
-                        <label>Municipio</label>
                     </div>
-                    <div class="input-field col s6">
-                        <select name="state_id" required>
+                    <div class="col s6">
+                        <label>Estado</label>
+                        <select name="state_id" class="browser-default" required>
                             <option value="" disabled selected>Selecciona un estado</option>
                             @foreach ($states as $state)
                                 <option value="{{ $state->id }}">{{ $state->name }}</option>
                             @endforeach
                         </select>
-                        <label>Estado</label>
                     </div>
                 </div>
             </div>
@@ -129,36 +129,36 @@
                 @method('PUT')
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="key" name="key" type="text" class="validate" required>
-                        <label>Clave</label>
+                        <input id="unity" name="unity" type="text" class="validate" required>
+                        <label>Unidad</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="job" name="job" type="text" class="validate" required>
+                        <input id="description" name="description" type="text" class="validate" required>
                         <label>Descripción</label>
                     </div>
-                    <div class="input-field col s6">
-                        <select id="locality_id" name="locality_id" required>
+                    <div class="col s6">
+                        <label>Localidad</label>
+                        <select id="locality_id" name="locality_id" class="browser-default" required>
                             @foreach ($localities as $locality)
                                 <option value="{{ $locality->id }}">{{ $locality->name }}</option>
                             @endforeach
                         </select>
-                        <label>Localidad</label>
                     </div>
-                    <div class="input-field col s6">
-                        <select id="municipality_id" name="municipality_id" required>
+                    <div class="col s6">
+                        <label>Municipio</label>
+                        <select id="municipality_id" name="municipality_id" class="browser-default" required>
                             @foreach ($municipalities as $municipality)
                                 <option value="{{ $municipality->id }}">{{ $municipality->name }}</option>
                             @endforeach
                         </select>
-                        <label>Municipio</label>
                     </div>
-                    <div class="input-field col s6">
-                        <select id="state_id" name="state_id" required>
+                    <div class="col s6">
+                        <label>Estado</label>
+                        <select id="state_id" name="state_id" class="browser-default" required>
                             @foreach ($states as $state)
                                 <option value="{{ $state->id }}">{{ $state->name }}</option>
                             @endforeach
                         </select>
-                        <label>Estado</label>
                     </div>
                 </div>
             </div>
@@ -180,11 +180,11 @@
 
             $(document).on('click', '.edit', function(){
                 var id = $(this).attr('data-id');
-                $('#key').val('Cargando...');
-                $('#description').val('Cargando...');
+                $('#unity').val('Cargando...').focus();
+                $('#description').val('Cargando...').focus();
                 $.get('{{ url('assignments') }}/' + id, function(assignment){
-                    $('#key').val(assignment.key);
-                    $('#description').val(assignment.description);
+                    $('#unity').val(assignment.unity).focus();
+                    $('#description').val(assignment.description).focus();
                     $('#locality_id').val(assignment.locality_id);
                     $('#municipality_id').val(assignment.municipality_id);
                     $('#state_id').val(assignment.state_id);

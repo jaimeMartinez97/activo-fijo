@@ -47,9 +47,10 @@
                                                         <td>{{ $user->reason }}</td>
                                                         <td>{{ $user->character }}</td>
                                                         <td>{{ $user->unity }}</td>
-                                                        <td>{{ $user->assignment->description }}</td>
+                                                        {{-- <td>{{ $user->assignment->description }}</td> --}}
+                                                        <td>alguna</td>
                                                         <td>
-                                                            {{ empty($user->zone_coordinator) ? $user->zone_coordinator->name : 'No es coordinador' }}
+                                                            {{ !empty($user->zone_coordinator) ? $user->zone_coordinator->name : 'No es coordinador' }}
                                                         </td>
                                                         <td>
                                                             <a class="edit mb-6 btn-floating waves-effect waves-light blue lightrn-1 modal-trigger" href="#modalUpdate" data-id="{{ $user->id }}">
@@ -99,8 +100,8 @@
                         <label>Status</label>
                         <select name="state" class="browser-default" required>
                             <option value="" disabled selected>Selecciona un status</option>
-                            <option value="Verdadero">Verdadero</option>
-                            <option value="Falso">Falso</option>
+                            <option value="VERDADERO">VERDADERO</option>
+                            <option value="FALSO">FALSO</option>
                         </select>
                     </div>
                     <div class="input-field col s6">
@@ -131,27 +132,28 @@
                         <input name="character" type="text" class="validate" required>
                         <label>Carácter</label>
                     </div>
-                    <div class="input-field col s6">
-                        <input name="unity" type="text" class="validate" required>
-                        <label>Unidad</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <select name="assignment_id" required>
+
+                    <div class="col s6">
+                        <label>Adscripción</label>
+                        <select name="assignment_id" class="browser-default" required>
                             <option value="" disabled selected>Selecciona una adscripción</option>
                             @foreach ($assignments as $assignment)
                                 <option value="{{ $assignment->id }}">{{ $assignment->description }}</option>
                             @endforeach
                         </select>
-                        <label>Adscripción</label>
                     </div>
                     <div class="input-field col s6">
-                        <select name="zone_coordinators_id" required>
+                        <input name="unity" type="text" class="validate" required>
+                        <label>Unidad</label>
+                    </div>
+                    <div class="col s6">
+                        <label>Coordinador de zona</label>
+                        <select name="zone_coordinators_id" class="browser-default">
                             <option value="" disabled selected>Selecciona una coordinación</option>
                             @foreach ($zone_coordinators as $zone_coordinator)
                                 <option value="{{ $zone_coordinator->id }}">{{ $zone_coordinator->name }}</option>
                             @endforeach
                         </select>
-                        <label>Coordinador de zona</label>
                     </div>
                 </div>
             </div>
@@ -171,12 +173,11 @@
                 @csrf
                 @method('PUT')
                 <div class="row">
-                    <div class=" col s6">
+                    <div class="col s6">
                         <label>Status</label>
                         <select id="state" name="state" class="browser-default" required>
-                            <option value="" disabled selected>Selecciona un status</option>
-                            <option value="Verdadero">Verdadero</option>
-                            <option value="Falso">Falso</option>
+                            <option value="1">VERDADERO</option>
+                            <option value="0">FALSO</option>
                         </select>
                     </div>
                     <div class="input-field col s6">
@@ -196,7 +197,7 @@
                         <label>Apellido Paterno</label>
                     </div>
                     <div class="input-field col s6">
-                        <input ="mother_lastname" name="mother_lastname" type="text" class="validate" required>
+                        <input id="mother_lastname" name="mother_lastname" type="text" class="validate" required>
                         <label>Apellido Materno</label>
                     </div>
                     <div class="input-field col s6">
@@ -207,27 +208,27 @@
                         <input id="character" name="character" type="text" class="validate" required>
                         <label>Carácter</label>
                     </div>
-                    <div class="input-field col s6">
-                        <input id="unity" name="unity" type="text" class="validate" required>
-                        <label>Unidad</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <select id="assignment_id" name="assignment_id" required>
+                    <div class="col s6">
+                        <label>Adscripción</label>
+                        <select id="assignment_id" name="assignment_id" class="browser-default" required>
                             <option value="" disabled selected>Selecciona una adscripción</option>
                             @foreach ($assignments as $assignment)
                                 <option value="{{ $assignment->id }}">{{ $assignment->description }}</option>
                             @endforeach
                         </select>
-                        <label>Adscripción</label>
                     </div>
                     <div class="input-field col s6">
-                        <select id="zone_coordinators_id" name="zone_coordinators_id" required>
+                        <input id="unity" name="unity" type="text" class="validate" required>
+                        <label>Unidad</label>
+                    </div>
+                    <div class="col s6">
+                        <label>Coordinador de zona</label>
+                        <select id="zone_coordinators_id" name="zone_coordinators_id" class="browser-default">
                             <option value="" disabled selected>Selecciona una coordinación</option>
                             @foreach ($zone_coordinators as $zone_coordinator)
                                 <option value="{{ $zone_coordinator->id }}">{{ $zone_coordinator->name }}</option>
                             @endforeach
                         </select>
-                        <label>Coordinador de zona</label>
                     </div>
                 </div>
             </div>
@@ -249,27 +250,26 @@
 
             $(document).on('click', '.edit', function(){
                 var id = $(this).attr('data-id');
-                $('#state').val('Cargando...');
-                $('#position').val('Cargando...');
-                $('#job').val('Cargando...');
-                $('#name').val('Cargando...');
-                $('#father_lastname').val('Cargando...');
-                $('#mother_lastname').val('Cargando...');
-                $('#reason').val('Cargando...');
-                $('#character').val('Cargando...');
-                $('#unity').val('Cargando...');
+                $('#position').val('Cargando...').focus();
+                $('#job').val('Cargando...').focus();
+                $('#name').val('Cargando...').focus();
+                $('#father_lastname').val('Cargando...').focus();
+                $('#mother_lastname').val('Cargando...').focus();
+                $('#reason').val('Cargando...').focus();
+                $('#character').val('Cargando...').focus();
+                $('#unity').val('Cargando...').focus();
                 $('#assignment_id').val('Cargando...');
                 $('#zoone_coordinators_id').val('Cargando...');
                 $.get('{{ url('users') }}/' + id, function(user){
-                    $('#state').val(user.state);
-                    $('#position').val(user.position);
-                    $('#job').val(user.job);
-                    $('#name').val(user.name);
-                    $('#father_lastname').val(user.father_lastname);
-                    $('#mother_lastname').val(user.mother_lastname);
-                    $('#reason').val(user.reason);
-                    $('#character').val(user.character);
-                    $('#unity').val(user.unity);
+                    $('#state').val(user.state === 'VERDADERO' ? 0 : 1);
+                    $('#position').val(user.position).focus();
+                    $('#job').val(user.job).focus();
+                    $('#name').val(user.name).focus();
+                    $('#father_lastname').val(user.father_lastname).focus();
+                    $('#mother_lastname').val(user.mother_lastname).focus();
+                    $('#reason').val(user.reason).focus();
+                    $('#character').val(user.character).focus();
+                    $('#unity').val(user.unity).focus();
                     $('#assignment_id').val(user.assignment_id);
                     $('#zone_coordinators_id').val(user.zone_coordinators_id);
                     $('#formUpdate').attr('action', '{{ url('users') }}/' + id);

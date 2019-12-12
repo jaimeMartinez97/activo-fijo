@@ -17,8 +17,8 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        $assignments = Assignment::with('locality', 'municipality', 'state');
-        $localities = Locality::all();
+        $assignments = Assignment::with('locality', 'municipality', 'state')->get();
+        $localities = Locality::orderBy('name')->get();
         $municipalities = Municipality::all();
         $states = State::all();
 

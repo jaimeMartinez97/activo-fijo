@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::with('assignment')->get();
         $assignments = Assignment::all();
         $zone_coordinators = ZoneCoordinator::all();
 
@@ -42,7 +42,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
+
+        return redirect('users');
     }
 
     /**
@@ -53,7 +55,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return response()->json($user);
     }
 
     /**
@@ -76,7 +78,9 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        User::update($request->all());
+
+        return redirect('users');
     }
 
     /**
