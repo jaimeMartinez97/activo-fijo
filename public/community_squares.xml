@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1:3306
+- Tiempo de generación: 16-12-2019 a las 19:40:19
+- Versión del servidor: 5.7.24-log
+- Versión de PHP: 7.3.1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="activofijo" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="community_squares">
+                CREATE TABLE `community_squares` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `UO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `unity_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `icve_unity_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `job_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `zone_coordinators_id` int(11) DEFAULT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `zone_coordinators_id` (`zone_coordinators_id`)
+                ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'activofijo'
+    -->
+    <database name="activofijo">
+        <!-- Tabla community_squares -->
+        <table name="community_squares">
+            <column name="id">1</column>
+            <column name="UO">104</column>
+            <column name="description">I-03-003-02 CASA DE LA CULTURA</column>
+            <column name="unity_type">104</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">8</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">2</column>
+            <column name="UO">126</column>
+            <column name="description">I-03-012-02 PC 4 DE MARZO</column>
+            <column name="unity_type">126</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">8</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">3</column>
+            <column name="UO">145</column>
+            <column name="description">C-03-005-18 PC ROBERTO ESPERON</column>
+            <column name="unity_type">145</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA EN COLABORACI?N</column>
+            <column name="job_type">PCO
+</column>
+            <column name="zone_coordinators_id">8</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">4</column>
+            <column name="UO">114</column>
+            <column name="description">I-03-002-02 MISIONEROS</column>
+            <column name="unity_type">114</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PAE
+</column>
+            <column name="zone_coordinators_id">9</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">5</column>
+            <column name="UO">4</column>
+            <column name="description">I-03-005-02 PUEBLO NUEVO</column>
+            <column name="unity_type">4</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">10</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">6</column>
+            <column name="UO">11</column>
+            <column name="description">I-03-013-02 SOCIAL 8 DE OCTUBRE</column>
+            <column name="unity_type">11</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">10</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">7</column>
+            <column name="UO">142</column>
+            <column name="description">I-03-009-02 CERESO</column>
+            <column name="unity_type">142</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PAE
+</column>
+            <column name="zone_coordinators_id">10</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">8</column>
+            <column name="UO">146</column>
+            <column name="description">I-03-008-02 DIF TODOS SANTOS</column>
+            <column name="unity_type">146</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">10</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">9</column>
+            <column name="UO">252</column>
+            <column name="description">C-03-004-18 DIF MUNICIPAL SANTA FE</column>
+            <column name="unity_type">252</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA EN COLABORACI?N</column>
+            <column name="job_type">PCO
+</column>
+            <column name="zone_coordinators_id">10</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">10</column>
+            <column name="UO">256</column>
+            <column name="description">DIF MUNICIPAL LOS CARDONES</column>
+            <column name="unity_type">256</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA EN COLABORACI?N</column>
+            <column name="job_type">PCO
+</column>
+            <column name="zone_coordinators_id">10</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">11</column>
+            <column name="UO">121</column>
+            <column name="description">I-03-001-16 PROF. RICARDO FLORES MAGON</column>
+            <column name="unity_type">121</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">11</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">12</column>
+            <column name="UO">123</column>
+            <column name="description">I-03-010-02 GUAYMITAS</column>
+            <column name="unity_type">123</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">11</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">13</column>
+            <column name="UO">138</column>
+            <column name="description">I-03-003-07 CERESO SAN JOSE</column>
+            <column name="unity_type">138</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PAE
+</column>
+            <column name="zone_coordinators_id">11</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">14</column>
+            <column name="UO">143</column>
+            <column name="description">C-03-001-06 SIN SOC DEL SIG  XXI</column>
+            <column name="unity_type">143</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA EN COLABORACI?N</column>
+            <column name="job_type">PCO
+</column>
+            <column name="zone_coordinators_id">11</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">15</column>
+            <column name="UO">7</column>
+            <column name="description">I-03-004-02 PC DIF AGUA ESCONDIDA</column>
+            <column name="unity_type">7</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">12</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">16</column>
+            <column name="UO">13</column>
+            <column name="description">I-03-002-07 PC DIF ROMA</column>
+            <column name="unity_type">13</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">12</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">17</column>
+            <column name="UO">18</column>
+            <column name="description">I-03-001-18 DIF LOMA LINDA MUNICIPAL</column>
+            <column name="unity_type">18</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PAE
+</column>
+            <column name="zone_coordinators_id">12</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">18</column>
+            <column name="UO">40</column>
+            <column name="description">I-03-004-07  PC CENTRO COMUNITARIO BOE</column>
+            <column name="unity_type">40</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">12</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">19</column>
+            <column name="UO">41</column>
+            <column name="description">C-03-002-18 DIF GUELATAO</column>
+            <column name="unity_type">41</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA EN COLABORACI?N</column>
+            <column name="job_type">PCO
+</column>
+            <column name="zone_coordinators_id">12</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">20</column>
+            <column name="UO">233</column>
+            <column name="description"> C-03-003-18 DIF  LA FUENTE</column>
+            <column name="unity_type">233</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA EN COLABORACI?N</column>
+            <column name="job_type">PCO
+</column>
+            <column name="zone_coordinators_id">12</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">21</column>
+            <column name="UO">238</column>
+            <column name="description">I-03-001-05 PC DIF NAVARRO RUBIO</column>
+            <column name="unity_type">238</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">12</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">22</column>
+            <column name="UO">43</column>
+            <column name="description">I-03-001-07 CROC</column>
+            <column name="unity_type">43</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">13</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">23</column>
+            <column name="UO">61</column>
+            <column name="description">I-03-001-17 ESCUELA DE TURISMO CROC</column>
+            <column name="unity_type">61</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">13</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">24</column>
+            <column name="UO">63</column>
+            <column name="description">I-03-001-02 LOS GIRASOLES</column>
+            <column name="unity_type">63</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">13</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">25</column>
+            <column name="UO">64</column>
+            <column name="description">I-03-014-02 CRUZ ROJA MEXICANA</column>
+            <column name="unity_type">64</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">13</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">26</column>
+            <column name="UO">81</column>
+            <column name="description">I-03-001-08  PLAZA COMUNITARIA LAS PALMAS</column>
+            <column name="unity_type">81</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">13</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">27</column>
+            <column name="UO">91</column>
+            <column name="description">I-03-002-18 CENTRO DE DESARROLLO DIF LOS CANGREJOS</column>
+            <column name="unity_type">91</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PAE
+</column>
+            <column name="zone_coordinators_id">13</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">28</column>
+            <column name="UO">55</column>
+            <column name="description">C-03-001-18 LA MISION</column>
+            <column name="unity_type">55</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA EN COLABORACI?N</column>
+            <column name="job_type">PCO
+</column>
+            <column name="zone_coordinators_id">14</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">29</column>
+            <column name="UO">77</column>
+            <column name="description">I-03-002-17 CONAFE VIZCAINO</column>
+            <column name="unity_type">77</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI
+</column>
+            <column name="zone_coordinators_id">14</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+        <table name="community_squares">
+            <column name="id">30</column>
+            <column name="UO">95</column>
+            <column name="description">I-03-007-02 CTO. CAPAC. SALINERA</column>
+            <column name="unity_type">95</column>
+            <column name="icve_unity_type">PLAZA COMUNITARIA INSTITUCIONAL</column>
+            <column name="job_type">PSI</column>
+            <column name="zone_coordinators_id">14</column>
+            <column name="created_at">2019-12-15 20:28:49</column>
+            <column name="updated_at">2019-12-15 20:28:49</column>
+        </table>
+    </database>
+</pma_xml_export>

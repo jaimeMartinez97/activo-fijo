@@ -15,11 +15,13 @@ class CreateCommunitySquaresTable extends Migration
     {
         Schema::create('community_squares', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('address');
-            $table->string('colony');
-            $table->string('zip_code');
-            $table->string('phone');
+            $table->string('UO');
+            $table->text('description');
+            $table->string('unity_type');
+            $table->string('icve_unity_type');
+            $table->string('job_type');
+            $table->unsignedBigInteger('zone_coordinators_id');
+            $table->foreign('zone_coordinators_id')->references('id')->on('zone_coordinators');
             $table->timestamps();
         });
     }

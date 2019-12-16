@@ -1,9 +1,11 @@
 <?php
-use App\State;
-use App\Municipality;
-use App\Locality;
+
 use App\User;
-use App\Assignment;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,70 +17,55 @@ use App\Assignment;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-// Route::get('state', function () {
-//     $array = array();
-//     $fp = fopen("../public/localidadesbcs.txt", "r");
-//     while (!feof($fp)){
-//         $linea = fgets($fp);
-//         array_push($array, explode("\t", mb_convert_encoding($linea, 'UTF-8', 'UTF-8')));
-//     }
-//     fclose($fp);
+// Route::get('user', function () {
+//     User::create([
+//         'name' => 'Jano',
+//         'father_lastname' => 'Rodriguez',
+//         'mother_lastname' => 'Alonso',
+//         'state' => '1',
+//         'unity' => '1',
+//         'job' => '1',
+//         'character' => 'J',
+//         'reason' => '1',
+//         'position' => '1',
+//         'email' => 'jano@gmail.com',
+//         'password' => Hash::make('12345'),
+//         'role_id' => 1
+//     ]);
 //
-//     foreach ($array as $row) {
-//         Locality::create([
-//             'name' => str_replace('"', "", $row[1]),
-//             'urban' => (int) $row[2],
-//             'municipality_id' => $row[3],
-//         ]);
-//     }
-//
-//     return "listo";
-//     $array = array();
-//     $fp = fopen("../public/empleados.txt", "r");
-//     while (!feof($fp)){
-//         $linea = fgets($fp);
-//         array_push($array, explode("\t", mb_convert_encoding($linea, 'UTF-8', 'UTF-8')));
-//     }
-//     fclose($fp);
-//
-//     foreach ($array as $row) {
-//         User::create([
-//             'position' => $row[1],
-//             'job' => (int) $row[2],
-//             'father_lastname' => $row[3],
-//             'mother_lastname' => $row[4],
-//             'name' => $row[5],
-//             'reason' => $row[6],
-//             'character' => $row[7],
-//             'unity' => $row[8],
-//             'state' => $row[10],
-//         ]);
-//     }
-//
-//     return "listo";
-//
-//     $array = array();
-//     $fp = fopen("../public/adscripciones.txt", "r");
-//     while (!feof($fp)){
-//         $linea = fgets($fp);
-//         array_push($array, explode("\t", mb_convert_encoding($linea, 'UTF-8', 'UTF-8')));
-//     }
-//     fclose($fp);
-//
-//     foreach ($array as $row) {
-//         Assignment::create([
-//             'unity' => (int) $row[0],
-//             'description' => $row[2],
-//             'state_id' => 1
-//         ]);
-//     }
-//
-//     return "listo";
+//     return 'listo';
 // });
 
-Route::resource('users', 'UserController');
-Route::resource('assignments', 'AssignmentController');
+Route::get('login', function () {
+    if(Auth::check()) {
+        return redirect('/');
+    }
+
+    return view('auth.login');
+});
+
+Route::post('authentication', function (Request $request) {
+    $credentials = $request->only('email', 'password');
+
+    if(Auth::attempt($credentials)) {
+        return redirect()->intended('/');
+    }
+
+    return redirect('login');
+});
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/', function () {
+        return view('home');
+    });
+
+    Route::get('logout', function () {
+        Auth::logout();
+
+        return redirect('login');
+    });
+
+    Route::resource('users', 'UserController');
+    Route::resource('assignments', 'AssignmentController');
+    Route::resource('properties', 'PropertyController');
+});

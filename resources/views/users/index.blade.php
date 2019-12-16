@@ -18,68 +18,75 @@
                                 <h4 class="card-title">Empleados registrados</h4>
                                 <div class="row">
                                     <div class="col s12">
-                                        <table id="page-length-option" class="display">
-                                            <thead>
-                                                <tr>
-                                                    <th>Status</th>
-                                                    <th>Código de puesto</th>
-                                                    <th>Plaza</th>
-                                                    <th>Nombre</th>
-                                                    <th>Apellido paterno</th>
-                                                    <th>Apellido materno</th>
-                                                    <th>Motivo</th>
-                                                    <th>Carácter</th>
-                                                    <th>Unidad</th>
-                                                    <th>Adscripción</th>
-                                                    <th>Coordinador de zona</th>
-                                                    <th>Acciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($users as $user)
+                                        <div class="container">
+                                            <table id="page-length-option" class="display">
+                                                <thead>
                                                     <tr>
-                                                        <td>{{ $user->state }}</td>
-                                                        <td>{{ $user->position }}</td>
-                                                        <td>{{ $user->job }}</td>
-                                                        <td>{{ $user->name }}</td>
-                                                        <td>{{ $user->father_lastname }}</td>
-                                                        <td>{{ $user->mother_lastname }}</td>
-                                                        <td>{{ $user->reason }}</td>
-                                                        <td>{{ $user->character }}</td>
-                                                        <td>{{ $user->unity }}</td>
-                                                        {{-- <td>{{ $user->assignment->description }}</td> --}}
-                                                        <td>alguna</td>
-                                                        <td>
-                                                            {{ !empty($user->zone_coordinator) ? $user->zone_coordinator->name : 'No es coordinador' }}
-                                                        </td>
-                                                        <td>
-                                                            <a class="edit mb-6 btn-floating waves-effect waves-light blue lightrn-1 modal-trigger" href="#modalUpdate" data-id="{{ $user->id }}">
-                                                                <i class="material-icons">create</i>
-                                                            </a>
-                                                            <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 modal-trigger" href="#modalDelete" data-id="{{ $user->id }}">
-                                                                <i class="material-icons">delete</i>
-                                                            </a>
-                                                        </td>
+                                                        <th>Status</th>
+                                                        <th>Código de puesto</th>
+                                                        <th>Plaza</th>
+                                                        <th>Nombre</th>
+                                                        <th>Apellido paterno</th>
+                                                        <th>Apellido materno</th>
+                                                        <th>Motivo</th>
+                                                        <th>Carácter</th>
+                                                        <th>Unidad</th>
+                                                        <th>Adscripción</th>
+                                                        <th>Coordinador de zona</th>
+                                                        <th>Acciones</th>
                                                     </tr>
-                                                @endforeach
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>Status</th>
-                                                    <th>Código de puesto</th>
-                                                    <th>Plaza</th>
-                                                    <th>Nombre</th>
-                                                    <th>Apellido paterno</th>
-                                                    <th>Apellido materno</th>
-                                                    <th>Motivo</th>
-                                                    <th>Carácter</th>
-                                                    <th>Unidad</th>
-                                                    <th>Adscripción</th>
-                                                    <th>Coordinador de zona</th>
-                                                    <th>Acciones</th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($users as $user)
+                                                        <tr>
+                                                            <td>
+                                                                @if ($user->state == 1)
+                                                                    VERDADERO
+                                                                @else
+                                                                    FALSO
+                                                                @endif
+                                                            </td>
+                                                            <td>{{ $user->position }}</td>
+                                                            <td>{{ $user->job }}</td>
+                                                            <td>{{ $user->name }}</td>
+                                                            <td>{{ $user->father_lastname }}</td>
+                                                            <td>{{ $user->mother_lastname }}</td>
+                                                            <td>{{ $user->reason }}</td>
+                                                            <td>{{ $user->character }}</td>
+                                                            <td>{{ $user->unity }}</td>
+                                                            <td>{{ empty($user->assignment) ? 'Sin adscripcion por el momento' : $user->assignment->description }}</td>
+                                                            <td>
+                                                                {{ !empty($user->zone_coordinator) ? $user->zone_coordinator->name : 'No es coordinador' }}
+                                                            </td>
+                                                            <td>
+                                                                <a class="edit mb-6 btn-floating waves-effect waves-light blue lightrn-1 modal-trigger" href="#modalUpdate" data-id="{{ $user->id }}">
+                                                                    <i class="material-icons">create</i>
+                                                                </a>
+                                                                <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 modal-trigger" href="#modalDelete" data-id="{{ $user->id }}">
+                                                                    <i class="material-icons">delete</i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>Status</th>
+                                                        <th>Código de puesto</th>
+                                                        <th>Plaza</th>
+                                                        <th>Nombre</th>
+                                                        <th>Apellido paterno</th>
+                                                        <th>Apellido materno</th>
+                                                        <th>Motivo</th>
+                                                        <th>Carácter</th>
+                                                        <th>Unidad</th>
+                                                        <th>Adscripción</th>
+                                                        <th>Coordinador de zona</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,8 +107,8 @@
                         <label>Status</label>
                         <select name="state" class="browser-default" required>
                             <option value="" disabled selected>Selecciona un status</option>
-                            <option value="VERDADERO">VERDADERO</option>
-                            <option value="FALSO">FALSO</option>
+                            <option value="1">VERDADERO</option>
+                            <option value="0">FALSO</option>
                         </select>
                     </div>
                     <div class="input-field col s6">

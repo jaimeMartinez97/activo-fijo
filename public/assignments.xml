@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1:3306
+- Tiempo de generación: 14-12-2019 a las 18:17:57
+- Versión del servidor: 5.7.24-log
+- Versión de PHP: 7.3.1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="activofijo" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="assignments">
+                CREATE TABLE `assignments` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `unity` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `state_id` bigint(20) unsigned NOT NULL,
+                  `locality_id` bigint(20) unsigned DEFAULT NULL,
+                  `municipality_id` bigint(20) unsigned DEFAULT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `assignments_state_id_foreign` (`state_id`),
+                  KEY `assignments_locality_id_foreign` (`locality_id`),
+                  KEY `assignments_municipality_id_foreign` (`municipality_id`)
+                ) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'activofijo'
+    -->
+    <database name="activofijo">
+        <!-- Tabla assignments -->
+        <table name="assignments">
+            <column name="id">1</column>
+            <column name="unity">11</column>
+            <column name="description">UNIDAD DE ASEGURAMIENTO DE LA CALIDAD</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:11:28</column>
+        </table>
+        <table name="assignments">
+            <column name="id">2</column>
+            <column name="unity">11</column>
+            <column name="description">DIRECCION GENERAL</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:13:32</column>
+        </table>
+        <table name="assignments">
+            <column name="id">3</column>
+            <column name="unity">11</column>
+            <column name="description">COORDINACION REGIONAL</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:13:45</column>
+        </table>
+        <table name="assignments">
+            <column name="id">4</column>
+            <column name="unity">11</column>
+            <column name="description">DEPTO. DE PLANEACION Y SEGUIMIENTO OPERATIVO</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:13:58</column>
+        </table>
+        <table name="assignments">
+            <column name="id">5</column>
+            <column name="unity">20</column>
+            <column name="description">OFNA. DE PROGRAMACION Y PRESUPUESTO</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:15:21</column>
+        </table>
+        <table name="assignments">
+            <column name="id">6</column>
+            <column name="unity">20</column>
+            <column name="description">OFNA. DE EVALUACION, INFORMACION Y SEGUIMIENTO</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:15:38</column>
+        </table>
+        <table name="assignments">
+            <column name="id">7</column>
+            <column name="unity">11</column>
+            <column name="description">DEPTO. DE SERVICIO EDUCATIVOS</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:14:11</column>
+        </table>
+        <table name="assignments">
+            <column name="id">8</column>
+            <column name="unity">30</column>
+            <column name="description">ALFABETIZACION, PRIMARIA Y SECUNDARIA</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:16:23</column>
+        </table>
+        <table name="assignments">
+            <column name="id">9</column>
+            <column name="unity">30</column>
+            <column name="description">EDUCACION COMUNITARIA Y CAP. PARA EL TRABAJO</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:21:01</column>
+        </table>
+        <table name="assignments">
+            <column name="id">10</column>
+            <column name="unity">30</column>
+            <column name="description">FORMACION DE PERSONAL DOCENTE</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:22:04</column>
+        </table>
+        <table name="assignments">
+            <column name="id">11</column>
+            <column name="unity">11</column>
+            <column name="description">OFNA. DE CONCERTACION Y DIFUSION</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:14:23</column>
+        </table>
+        <table name="assignments">
+            <column name="id">12</column>
+            <column name="unity">11</column>
+            <column name="description">COORD. DE ZONA COMONDU 01</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">1</column>
+            <column name="municipality_id">1</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 00:57:52</column>
+        </table>
+        <table name="assignments">
+            <column name="id">13</column>
+            <column name="unity">11</column>
+            <column name="description">COORD. DE ZONA MULEGE 02</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">1</column>
+            <column name="municipality_id">2</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 00:58:03</column>
+        </table>
+        <table name="assignments">
+            <column name="id">14</column>
+            <column name="unity">11</column>
+            <column name="description">COORD. DE ZONA LA PAZ I 03</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">1</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 00:58:17</column>
+        </table>
+        <table name="assignments">
+            <column name="id">15</column>
+            <column name="unity">11</column>
+            <column name="description">COORD. DE ZONA SAN JOSE DEL CABO 04</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">1</column>
+            <column name="municipality_id">4</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 00:59:14</column>
+        </table>
+        <table name="assignments">
+            <column name="id">16</column>
+            <column name="unity">11</column>
+            <column name="description">COORD. DE ZONA LA PAZ II 05</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">1</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:02:34</column>
+        </table>
+        <table name="assignments">
+            <column name="id">17</column>
+            <column name="unity">11</column>
+            <column name="description">COORD. DE ZONA CABO SAN LUCAS 06</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">1</column>
+            <column name="municipality_id">4</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 00:59:37</column>
+        </table>
+        <table name="assignments">
+            <column name="id">18</column>
+            <column name="unity">11</column>
+            <column name="description">COORD. DE ZONA LORETO 07</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">5</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:06:18</column>
+        </table>
+        <table name="assignments">
+            <column name="id">19</column>
+            <column name="unity">11</column>
+            <column name="description">DEPTO. DE SEGUIMIENTO Y ACREDITACION</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:14:39</column>
+        </table>
+        <table name="assignments">
+            <column name="id">20</column>
+            <column name="unity">85</column>
+            <column name="description">OFNA. DE DESARROLLO Y MANTO. DE SISTEMAS</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:22:52</column>
+        </table>
+        <table name="assignments">
+            <column name="id">21</column>
+            <column name="unity">85</column>
+            <column name="description">OFNA. DE SOPORTE TECNICO Y CAPACITACION</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:23:05</column>
+        </table>
+        <table name="assignments">
+            <column name="id">22</column>
+            <column name="unity">80</column>
+            <column name="description">OFNA. DE ACREDITACION</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:22:19</column>
+        </table>
+        <table name="assignments">
+            <column name="id">23</column>
+            <column name="unity">80</column>
+            <column name="description">OFNA. DE EVALUACION DEL APRENDIZAJE</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:22:34</column>
+        </table>
+        <table name="assignments">
+            <column name="id">24</column>
+            <column name="unity">11</column>
+            <column name="description">UNIDAD DE INFORMATICA</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:14:53</column>
+        </table>
+        <table name="assignments">
+            <column name="id">25</column>
+            <column name="unity">11</column>
+            <column name="description">DEPTO. DE ADMINISTRACION Y FINANZAS</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:15:08</column>
+        </table>
+        <table name="assignments">
+            <column name="id">26</column>
+            <column name="unity">90</column>
+            <column name="description">OFNA. DE RECURSOS FINANCIEROS</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:25:19</column>
+        </table>
+        <table name="assignments">
+            <column name="id">27</column>
+            <column name="unity">90</column>
+            <column name="description">OFNA. DE RECURSOS MATERIALES</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:26:19</column>
+        </table>
+        <table name="assignments">
+            <column name="id">28</column>
+            <column name="unity">90</column>
+            <column name="description">OFNA. DE RECURSOS HUMANOS</column>
+            <column name="state_id">1</column>
+            <column name="locality_id">996</column>
+            <column name="municipality_id">3</column>
+            <column name="created_at">2019-12-12 00:33:31</column>
+            <column name="updated_at">2019-12-12 01:26:35</column>
+        </table>
+    </database>
+</pma_xml_export>

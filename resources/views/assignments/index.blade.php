@@ -18,47 +18,49 @@
                                 <h4 class="card-title">Adscripciones registradas</h4>
                                 <div class="row">
                                     <div class="col s12">
-                                        <table id="page-length-option" class="display">
-                                            <thead>
-                                                <tr>
-                                                    <th>Unidad</th>
-                                                    <th>Descripción</th>
-                                                    <th>Localidad</th>
-                                                    <th>Municipio</th>
-                                                    <th>Estado</th>
-                                                    <th>Acciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($assignments as $assignment)
+                                        <div class="container">
+                                            <table id="page-length-option" class="display">
+                                                <thead>
                                                     <tr>
-                                                        <td>{{ $assignment->unity }}</td>
-                                                        <td>{{ $assignment->description }}</td>
-                                                        <td>{{ $assignment->locality->name }}</td>
-                                                        <td>{{ $assignment->municipality->name}}</td>
-                                                        <td>{{ $assignment->state->name }}</td>
-                                                        <td>
-                                                            <a class="edit mb-6 btn-floating waves-effect waves-light blue lightrn-1 modal-trigger" href="#modalUpdate" data-id="{{ $assignment->id }}">
-                                                                <i class="material-icons">create</i>
-                                                            </a>
-                                                            <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 modal-trigger" href="#modalDelete" data-id="{{ $assignment->id }}">
-                                                                <i class="material-icons">delete</i>
-                                                            </a>
-                                                        </td>
+                                                        <th>Unidad</th>
+                                                        <th>Descripción</th>
+                                                        <th>Localidad</th>
+                                                        <th>Municipio</th>
+                                                        <th>Estado</th>
+                                                        <th>Acciones</th>
                                                     </tr>
-                                                @endforeach
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>Unidad</th>
-                                                    <th>Descripción</th>
-                                                    <th>Localidad</th>
-                                                    <th>Municipio</th>
-                                                    <th>Estado</th>
-                                                    <th>Acciones</th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($assignments as $assignment)
+                                                        <tr>
+                                                            <td>{{ $assignment->unity }}</td>
+                                                            <td>{{ $assignment->description }}</td>
+                                                            <td>{{ $assignment->locality->name }}</td>
+                                                            <td>{{ $assignment->municipality->name}}</td>
+                                                            <td>{{ $assignment->state->name }}</td>
+                                                            <td>
+                                                                <a class="edit mb-6 btn-floating waves-effect waves-light blue lightrn-1 modal-trigger" href="#modalUpdate" data-id="{{ $assignment->id }}">
+                                                                    <i class="material-icons">create</i>
+                                                                </a>
+                                                                <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 modal-trigger" href="#modalDelete" data-id="{{ $assignment->id }}">
+                                                                    <i class="material-icons">delete</i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>Unidad</th>
+                                                        <th>Descripción</th>
+                                                        <th>Localidad</th>
+                                                        <th>Municipio</th>
+                                                        <th>Estado</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

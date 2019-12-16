@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1:3306
+- Tiempo de generación: 16-12-2019 a las 19:40:31
+- Versión del servidor: 5.7.24-log
+- Versión de PHP: 7.3.1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="activofijo" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="zone_coordinators">
+                CREATE TABLE `zone_coordinators` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `colony` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `zip_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'activofijo'
+    -->
+    <database name="activofijo">
+        <!-- Tabla zone_coordinators -->
+        <table name="zone_coordinators">
+            <column name="id">11</column>
+            <column name="name">SAN JOSE DEL CABO</column>
+            <column name="address">TRANSPENINSULAR EDIFICIO PEDRIN 1ER PISO</column>
+            <column name="colony">8 DE OCTUBRE</column>
+            <column name="zip_code">23,400</column>
+            <column name="phone">(624)1-42-41-81
+</column>
+            <column name="created_at">2019-12-14 18:03:25</column>
+            <column name="updated_at">2019-12-14 18:03:25</column>
+        </table>
+        <table name="zone_coordinators">
+            <column name="id">10</column>
+            <column name="name">LA PAZ</column>
+            <column name="address">CUAUHTEMOC ENTRE AV. RAMIREZ Y AV. G. PRIETO</column>
+            <column name="colony">CENTRO</column>
+            <column name="zip_code">23,000</column>
+            <column name="phone">(612)1-22-83-50
+</column>
+            <column name="created_at">2019-12-14 18:03:25</column>
+            <column name="updated_at">2019-12-14 18:03:25</column>
+        </table>
+        <table name="zone_coordinators">
+            <column name="id">9</column>
+            <column name="name">MULEGE</column>
+            <column name="address">OBREGON Y CALLE 2</column>
+            <column name="colony">CENTRO</column>
+            <column name="zip_code">23,920</column>
+            <column name="phone">(612)1-52-10-08
+</column>
+            <column name="created_at">2019-12-14 18:03:25</column>
+            <column name="updated_at">2019-12-14 18:03:25</column>
+        </table>
+        <table name="zone_coordinators">
+            <column name="id">8</column>
+            <column name="name">COMONDU</column>
+            <column name="address">PINO SUAREZ ENTRE BOULEVARD OLACHEA Y CALLE BENITO JUAREZ</column>
+            <column name="colony">CENTRO</column>
+            <column name="zip_code">23,600</column>
+            <column name="phone">(612)1-32-19-19
+</column>
+            <column name="created_at">2019-12-14 18:03:25</column>
+            <column name="updated_at">2019-12-14 18:03:25</column>
+        </table>
+        <table name="zone_coordinators">
+            <column name="id">12</column>
+            <column name="name">LA PAZ II</column>
+            <column name="address">MARQUEZ DE LEON ENTRE AV. ALTAMIRANO Y AV. GOMEZ FARIAS</column>
+            <column name="colony">CENTRO</column>
+            <column name="zip_code">23,000</column>
+            <column name="phone">(612)1-25-22-04
+</column>
+            <column name="created_at">2019-12-14 18:03:25</column>
+            <column name="updated_at">2019-12-14 18:03:25</column>
+        </table>
+        <table name="zone_coordinators">
+            <column name="id">13</column>
+            <column name="name">CABO SAN LUCAS</column>
+            <column name="address">DE LA JUVENTUD ESQUINA AV. MORELOS</column>
+            <column name="colony">CENTRO</column>
+            <column name="zip_code">23,410</column>
+            <column name="phone">(624)1-43-03-77
+</column>
+            <column name="created_at">2019-12-14 18:03:25</column>
+            <column name="updated_at">2019-12-14 18:03:25</column>
+        </table>
+        <table name="zone_coordinators">
+            <column name="id">14</column>
+            <column name="name">MULEGE II</column>
+            <column name="address">SALVATIERRA ENTRE MARQUEZ DE LEON Y AYUNTAMIENTO</column>
+            <column name="colony">CENTRO</column>
+            <column name="zip_code">23,880</column>
+            <column name="phone">(61)3-13-54-30</column>
+            <column name="created_at">2019-12-14 18:03:25</column>
+            <column name="updated_at">2019-12-14 18:03:25</column>
+        </table>
+    </database>
+</pma_xml_export>

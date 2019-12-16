@@ -32,8 +32,8 @@ class CreateUsersTable extends Migration
             $table->foreign('role_id')->references('id')->on('roles');
             $table->unsignedBigInteger('assignment_id');
             $table->foreign('assignment_id')->references('id')->on('assignments');
-            $table->unsignedBigInteger('zone_coordinators')->nullable();
-            $table->foreign('zone_coordinators')->references('id')->on('zone_coordinators');
+            $table->unsignedBigInteger('zone_coordinators_id')->nullable();
+            $table->foreign('zone_coordinators_id')->references('id')->on('zone_coordinators');
             $table->timestamps();
         });
     }

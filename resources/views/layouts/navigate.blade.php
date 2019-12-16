@@ -11,40 +11,10 @@
         </h1>
     </div>
     <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
-        {{-- <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="#"><i class="material-icons">settings_input_svideo</i><span class="menu-title" data-i18n="">Dashboard</span><span class="badge badge pill orange float-right mr-10">3</span></a>
-            <div class="collapsible-body">
-                <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                    <li><a class="collapsible-body" href="dashboard-modern.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Modern</span></a>
-                    </li>
-                    <li><a class="collapsible-body" href="dashboard-ecommerce.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>eCommerce</span></a>
-                    </li>
-                    <li><a class="collapsible-body" href="dashboard-analytics.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Analytics</span></a>
-                    </li>
-                </ul>
-            </div>
+        <li class="navigation-header">
+            <a class="navigation-header-text">Bienvenido {{ Auth::user()->name }}</a>
+            <i class="navigation-header-icon material-icons">more_horiz</i>
         </li>
-        <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="#"><i class="material-icons">dvr</i><span class="menu-title" data-i18n="">Templates</span></a>
-            <div class="collapsible-body">
-                <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                    <li><a class="collapsible-body collapsible-header waves-effect waves-cyan" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Vertical</span></a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible" data-collapsible="accordion">
-                                <li><a class="collapsible-body" href="../vertical-modern-menu-template/" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Modern  Menu</span></a>
-                                </li>
-                                <li><a class="collapsible-body" href="../vertical-menu-nav-dark-template/" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Navbar Dark</span></a>
-                                </li>
-                                <li><a class="collapsible-body" href="../vertical-gradient-menu-template/" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Gradient Menu</span></a>
-                                </li>
-                                <li><a class="collapsible-body" href="../vertical-dark-menu-template/" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Dark Menu</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </li> --}}
-        {{-- <li class="bold"><a class="waves-effect waves-cyan " href="app-email.html"><i class="material-icons">mail_outline</i><span class="menu-title" data-i18n="">Mail</span><span class="badge new badge pill pink accent-2 float-right mr-10">5</span></a>
-        </li> --}}
         <li class="bold">
             <a class="waves-effect waves-cyan {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">
                 <i class="material-icons">home</i>
@@ -61,6 +31,12 @@
             <a class="waves-effect waves-cyan {{ Request::is('assignments') ? 'active' : '' }}" href="{{ url('assignments') }}">
                 <i class="material-icons">account_balance</i>
                 <span class="menu-title" data-i18n="">Adscripciones</span>
+            </a>
+        </li>
+        <li class="bold">
+            <a class="waves-effect waves-cyan {{ Request::is('properties') ? 'active' : '' }}" href="{{ url('properties') }}">
+                <i class="material-icons">work</i>
+                <span class="menu-title" data-i18n="">Bienes</span>
             </a>
         </li>
     </ul>

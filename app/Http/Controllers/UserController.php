@@ -78,7 +78,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        User::update($request->all());
+        $user->update($request->all());
 
         return redirect('users');
     }

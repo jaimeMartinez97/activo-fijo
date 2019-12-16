@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Property;
+use App\PropertyType;
+use App\ObjectExpense;
 use Illuminate\Http\Request;
 
 class PropertyController extends Controller
@@ -14,7 +16,11 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        $properties = Property::with('property_type', 'object_expense')->get();
+        $property_types = PropertyType::all();
+        $object_expenses = ObjectExpense::all();
+
+        return view('properties.index', compact('properties', 'property_types', 'object_expenses'));
     }
 
     /**
@@ -35,7 +41,9 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Property::create($request->all());
+
+        return redirect('properties');
     }
 
     /**
@@ -46,7 +54,7 @@ class PropertyController extends Controller
      */
     public function show(Property $property)
     {
-        //
+        return response()->json($property);
     }
 
     /**
@@ -69,7 +77,9 @@ class PropertyController extends Controller
      */
     public function update(Request $request, Property $property)
     {
-        //
+        $property->update($request->all());
+
+        return redirect('properties');
     }
 
     /**

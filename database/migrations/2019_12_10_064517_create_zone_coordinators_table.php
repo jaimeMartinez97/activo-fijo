@@ -15,11 +15,11 @@ class CreateZoneCoordinatorsTable extends Migration
     {
         Schema::create('zone_coordinators', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('UO');
-            $table->text('description');
-            $table->string('unity_type');
-            $table->string('icve_unity_type');
-            $table->string('job_type');
+            $table->string('name');
+            $table->string('address');
+            $table->string('colony');
+            $table->string('zip_code');
+            $table->string('phone');
             $table->timestamps();
         });
     }
