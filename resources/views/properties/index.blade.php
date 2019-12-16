@@ -47,7 +47,7 @@
                                                             <td>{{ $property->color }}</td>
                                                             <td>{{ $property->supplier }}</td>
                                                             <td>
-                                                                @if (empty($property->given))
+                                                                @if ($property->property_types_id != 2)
                                                                     No aplica
                                                                 @else
                                                                     @if ($property->given == 0)
