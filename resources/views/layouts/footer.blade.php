@@ -1,5 +1,5 @@
-<footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
+<footer class="page-footer footer footer-static gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
     <div class="footer-copyright">
-        <div class="container"><span>&copy; 2019          <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT</a> All rights reserved.</span><span class="right hide-on-small-only">Design and Developed by <a href="https://pixinvent.com/">PIXINVENT</a></span></div>
+        <div class="container"><span>&copy; 2019          <a href="http://www.inea.gob.mx/index.php" target="_blank">INEA</a> Todos los derechos reservados.</span><span class="right hide-on-small-only">Diseñado y creado por <a href="http://www.inea.gob.mx/index.php">INEA</a></span></div>
     </div>
 </footer>

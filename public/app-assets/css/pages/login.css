@@ -3,7 +3,7 @@
 ------------------------------------------*/
 .login-bg
 {
-    background-image: url('../../images/gallery/flat-bg.jpg');
+    background-color: #0b231e;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
@@ -17,7 +17,7 @@
     display: -ms-flexbox;
     display:         flex;
 
-    height: 100vh; 
+    height: 100vh;
 
     -webkit-box-pack: center;
     -webkit-justify-content: center;

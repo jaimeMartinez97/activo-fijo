@@ -4232,7 +4232,7 @@ li.home:before
 }
 
 /*----------------------------------------
-  Grid 
+  Grid
 ------------------------------------------*/
 .section
 {
@@ -7148,10 +7148,7 @@ li.home:before
 .gradient-45deg-purple-deep-orange
 {
       background: #8e24aa;
-      background: -webkit-linear-gradient(45deg, #8e24aa, #ff6e40) !important;
-      background: -moz- oldlinear-gradient(45deg, #8e24aa, #ff6e40) !important;
-      background:      -o-linear-gradient(45deg, #8e24aa, #ff6e40) !important;
-      background:         linear-gradient(45deg, #8e24aa, #ff6e40) !important;
+      background: #9d2449 !important;
 }
 .gradient-45deg-purple-deep-orange.gradient-shadow
 {
@@ -7259,11 +7256,7 @@ li.home:before
 
 .gradient-45deg-indigo-purple
 {
-      background: #303f9f;
-      background: -webkit-linear-gradient(45deg, #303f9f, #7b1fa2) !important;
-      background: -moz- oldlinear-gradient(45deg, #303f9f, #7b1fa2) !important;
-      background:      -o-linear-gradient(45deg, #303f9f, #7b1fa2) !important;
-      background:         linear-gradient(45deg, #303f9f, #7b1fa2) !important;
+      background: #0b231e;
 }
 .gradient-45deg-indigo-purple.gradient-shadow
 {
@@ -8341,10 +8334,7 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
 .sidenav li a.active
 {
     color: #fff;
-      background: -webkit-linear-gradient(45deg, #303f9f, #7b1fa2);
-      background: -moz- oldlinear-gradient(45deg, #303f9f, #7b1fa2);
-      background:      -o-linear-gradient(45deg, #303f9f, #7b1fa2);
-      background:         linear-gradient(45deg, #303f9f, #7b1fa2);
+      background: #9d2449;
     -webkit-box-shadow: 3px 3px 20px 0 rgba(123, 31, 162, .5);
             box-shadow: 3px 3px 20px 0 rgba(123, 31, 162, .5);
 }
