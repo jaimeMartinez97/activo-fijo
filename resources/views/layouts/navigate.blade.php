@@ -39,6 +39,12 @@
                 <span class="menu-title" data-i18n="">Bienes</span>
             </a>
         </li>
+        <li class="bold">
+            <a class="waves-effect waves-cyan {{ Request::is('property_type') ? 'active' : '' }}" href="{{ url('property_type') }}">
+                <i class="material-icons">business_center</i>
+                <span class="menu-title" data-i18n="">Tipo de Bien</span>
+            </a>
+        </li>
     </ul>
     <div class="navigation-background"></div>
     <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out">

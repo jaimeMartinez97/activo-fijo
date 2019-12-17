@@ -14,7 +14,10 @@ class PropertyTypeController extends Controller
      */
     public function index()
     {
-        //
+        $property_types = PropertyType::all();
+        //return response()->json($property_types);
+
+        return view('propertyType.index', compact('property_types'));
     }
 
     /**
@@ -24,7 +27,7 @@ class PropertyTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('propertyType.index', compact('property_types'));
     }
 
     /**
@@ -35,7 +38,9 @@ class PropertyTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        PropertyType::create($request->all());
+
+        return redirect('property_type');
     }
 
     /**
@@ -69,7 +74,9 @@ class PropertyTypeController extends Controller
      */
     public function update(Request $request, PropertyType $propertyType)
     {
-        //
+        $propertyType->update($request->all());
+
+        return redirect('propertiy_type');
     }
 
     /**

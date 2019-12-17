@@ -19,28 +19,28 @@ use Illuminate\Support\Facades\Hash;
 
 // Route::get('user', function () {
 //     User::create([
-//         'name' => 'Jano',
-//         'father_lastname' => 'Rodriguez',
-//         'mother_lastname' => 'Alonso',
+//         'name' => 'jaime',
+//         'father_lastname' => 'Martinez',
+//         'mother_lastname' => 'Ortega',
 //         'state' => '1',
 //         'unity' => '1',
 //         'job' => '1',
-//         'character' => 'J',
+//        'character' => 'J',
 //         'reason' => '1',
 //         'position' => '1',
-//         'email' => 'jano@gmail.com',
-//         'password' => Hash::make('12345'),
-//         'role_id' => 1
+//         'email' => 'jaime@gmail.com',
+//         'password' => Hash::make('123'),
+//         'role_id' => 1,
+//         'assignment_id'=>1
 //     ]);
 //
-//     return 'listo';
-// });
+ //    return 'listo';
+ //});
 
 Route::get('login', function () {
     if(Auth::check()) {
         return redirect('/');
     }
-
     return view('auth.login');
 });
 
@@ -68,4 +68,5 @@ Route::group(['middleware' => ['admin']], function () {
     Route::resource('users', 'UserController');
     Route::resource('assignments', 'AssignmentController');
     Route::resource('properties', 'PropertyController');
+    Route::resource('property_type', 'PropertyTypeController');
 });
