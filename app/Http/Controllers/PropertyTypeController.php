@@ -87,6 +87,7 @@ class PropertyTypeController extends Controller
      */
     public function destroy(PropertyType $propertyType)
     {
-        //
+        $propertyType->delete();
+        return response()->json("bien");
     }
 }

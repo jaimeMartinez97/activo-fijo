@@ -35,7 +35,7 @@
                                                                      <i class="material-icons">create</i>
                                                                      
                                                                  </a>
-                                                                 <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 modal-trigger" href="#modalDelete" data-id="{{ $item->id }}">
+                                                                 <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 " href="#modalDelete" data-id="{{ $item->id }}">
                                                                      <i class="material-icons">delete</i>
                                                                  </a>
                                                              </td>
@@ -109,7 +109,6 @@
     <script>        
         $('.modificar').click(function(){
                 let id=$(this).attr("data-id")
-                console.log(id)
                 $('#formUpdate').attr("action",'{{url("property_type")}}/'+id)
                 $('#tipo').val("cargando...")
                 $.get('{{url("property_type")}}/'+id,function(proptype){
@@ -119,8 +118,22 @@
         $(document).on('click', '.delete', function(){
             var id = $(this).attr('data-id');
             // $('#formDelete').attr('action', '{{ url("property_type") }}/' + id);
-            var toastHTML = '<span>esta seguro de borrar este tipo de bien?</span><button class="btn-flat toast-action">si borrar</button><button class="btn-flat toast-action">cancelar</button>';
+            var toastHTML = '<span>¿está seguro de borrar este tipo de bien?</span><button id="siD" class="btn-flat toast-action">si</button><button id="no" onclick="M.Toast.dismissAll()" class="btn-flat toast-action">cancelar</button>';
             M.toast({html: toastHTML});
+            $('#siD').click(function(){
+                console.log('se elimino')
+                $.ajax({
+                        url: "{{url('property_type')}}/"+id,
+                        type: "post",
+                        data:{ 
+                            _token:'{{ csrf_token() }}',_method:"delete"
+                        },
+                        dataType: 'json',
+                        success: function(dataResult){
+                            location.reload();
+                        }
+                    });
+            })
         });
     </script>
 @endsection
