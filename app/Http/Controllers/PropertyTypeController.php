@@ -51,7 +51,7 @@ class PropertyTypeController extends Controller
      */
     public function show(PropertyType $propertyType)
     {
-        //
+        return response()->json($propertyType);
     }
 
     /**

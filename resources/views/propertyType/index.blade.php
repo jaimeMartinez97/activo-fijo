@@ -106,16 +106,21 @@
 
 @endsection
 @section('level')
-    <script>
+    <script>        
         $('.modificar').click(function(){
-            let id=$(this).attr("data-id")
-            console.log(id)
-            $('#formUpdate').attr("action",'{{url("property_type")}}/'+id)
-            $('#tipo').val("cargando...")
-            $.get('{{url("property_type")}}/'+id,function(proptype){
-                console.log(proptype)
-               $('#tipo').val('hola')                         
+                let id=$(this).attr("data-id")
+                console.log(id)
+                $('#formUpdate').attr("action",'{{url("property_type")}}/'+id)
+                $('#tipo').val("cargando...")
+                $.get('{{url("property_type")}}/'+id,function(proptype){
+                $('#tipo').val(proptype.type)                         
+                })
             })
-            })
+        $(document).on('click', '.delete', function(){
+            var id = $(this).attr('data-id');
+            // $('#formDelete').attr('action', '{{ url("property_type") }}/' + id);
+            var toastHTML = '<span>esta seguro de borrar este tipo de bien?</span><button class="btn-flat toast-action">si borrar</button><button class="btn-flat toast-action">cancelar</button>';
+            M.toast({html: toastHTML});
+        });
     </script>
 @endsection
