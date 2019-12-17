@@ -69,4 +69,5 @@ Route::group(['middleware' => ['admin']], function () {
     Route::resource('assignments', 'AssignmentController');
     Route::resource('properties', 'PropertyController');
     Route::resource('property_type', 'PropertyTypeController');
+    Route::resource('zone_coordinator', 'ZoneCoordinatorController');
 });

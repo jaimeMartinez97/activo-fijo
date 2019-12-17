@@ -45,6 +45,12 @@
                 <span class="menu-title" data-i18n="">Tipo de Bien</span>
             </a>
         </li>
+        <li class="bold">
+            <a class="waves-effect waves-cyan {{ Request::is('zone_coordinator') ? 'active' : '' }}" href="{{ url('zone_coordinator') }}">
+                <i class="material-icons">person_pin_circle</i>
+                <span class="menu-title" data-i18n="">Coordinacion de Zona</span>
+            </a>
+        </li>
     </ul>
     <div class="navigation-background"></div>
     <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out">

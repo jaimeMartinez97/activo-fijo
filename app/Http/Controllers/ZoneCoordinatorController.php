@@ -14,7 +14,10 @@ class ZoneCoordinatorController extends Controller
      */
     public function index()
     {
-        //
+        $zones = ZoneCoordinator::all();
+        //return response()->json($zones);
+
+        return view('zonecoordinators.index', compact('zones'));
     }
 
     /**
@@ -24,7 +27,7 @@ class ZoneCoordinatorController extends Controller
      */
     public function create()
     {
-        //
+        return view('zonecoordinators.index', compact('zones'));
     }
 
     /**
@@ -35,7 +38,9 @@ class ZoneCoordinatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        ZoneCoordinator::create($request->all());
+
+        return redirect('zone_coordinator');
     }
 
     /**
@@ -46,7 +51,7 @@ class ZoneCoordinatorController extends Controller
      */
     public function show(ZoneCoordinator $zoneCoordinator)
     {
-        //
+        return response()->json($zoneCoordinator);
     }
 
     /**
@@ -69,7 +74,9 @@ class ZoneCoordinatorController extends Controller
      */
     public function update(Request $request, ZoneCoordinator $zoneCoordinator)
     {
-        //
+        $zoneCoordinator->update($request->all());
+
+        return redirect('zone_coordinator');
     }
 
     /**
@@ -80,6 +87,7 @@ class ZoneCoordinatorController extends Controller
      */
     public function destroy(ZoneCoordinator $zoneCoordinator)
     {
-        //
+        $zoneCoordinator->delete();
+        return response()->json("bien");
     }
 }
