@@ -65,6 +65,9 @@
                                                                 <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 modal-trigger" href="#modalDelete" data-id="{{ $user->id }}">
                                                                     <i class="material-icons">delete</i>
                                                                 </a>
+                                                                <a class="add mb-6 btn-floating waves-effect waves-light green lightrn-1 modal-trigger" href="#modalAdd" data-id="{{ $user->id }}">
+                                                                    <i class="material-icons">work</i>
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -96,6 +99,53 @@
             </div>
         </div>
     </div>
+
+    <div id="modalAdd" class="modal">
+        <div class="modal-content">
+            <h4>Asignar un bien</h4>
+            <p>Ingresa los datos correspondientes asignar un bien</p>
+            @csrf
+            <div class="row">
+                <div class="col s12">
+                    <label>Bien</label>
+                    <select id="property_id" name="property_id" class="browser-default" required>
+                        <option value="0" selected>Selecciona un bien</option>
+                        @foreach ($properties as $property)
+                            <option value="{{ $property->id }}">
+                                {{ $property->property_type->type }} -
+                                {{ $property->object_expense->COG }} -
+                                {{ $property->brand }}
+                                {{ $property->model }}
+                                {{ $property->color }}
+                                {{ $property->general_description }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <input id="serial_number" name="serial_number" type="text" class="validate" required>
+                    <label>Número de serie</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="inventary_number" name="inventary_number" type="text" class="validate" required>
+                    <label>Número de inventario</label>
+                </div>
+                <div class="col s6">
+                    <button id="add_property" class="modal-action mb-6 btn waves-effect waves-light green darken-1">Agregar</button>
+                </div>
+                <div class="col s12">
+                    <ul id="user_properties" class="collection with-header">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <a href="#!" class="modal-action mb-6 btn waves-effect waves-light red darken-1 modal-close">Cerrar</a>
+        </div>
+    </div>
+
     <div id="modalRegister" class="modal">
         <form class="col s12" action="{{ url('users') }}" method="POST">
             <div class="modal-content">
@@ -282,6 +332,51 @@
                     $('#formUpdate').attr('action', '{{ url('users') }}/' + id);
                 });
             });
+
+            $(document).on('click', '.add', function(){
+                let id = $(this).attr('data-id');
+                load_properties(id);
+                $('#add_property').attr('data-id', id);
+            });
+
+            $('#add_property').click(function(){
+                let id = $(this).attr('data-id');
+                $.ajax({
+                    url: "{{ url('users_add_property') }}/" + id,
+                    type: "POST",
+                    data:{
+                        _token:'{{ csrf_token() }}',
+                        inventary_number: $('#inventary_number').val(),
+                        serial_number: $('#serial_number').val(),
+                        property_id: $('#property_id').val(),
+                    },
+                    dataType: 'json',
+                    success: function(json){
+                        $('#inventary_number').val('');
+                        $('#serial_number').val('');
+                        $('#property_id').val(0);
+                        load_properties(id);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.responseText);
+                        console.log(thrownError);
+                    }
+                });
+            });
+
+            function load_properties(id) {
+                $.get('{{ url('users_properties') }}/' + id, function(properties){
+                    let html = '<li class="collection-header"><h4>Bienes asignados</h4></li>';
+                    if(properties.length == 0){
+                        html += '<li class="collection-item"><div>No hay bienes asignados</div></li>';
+                    }else{
+                        $.each(properties, function(key, property){
+                            html += '<li class="collection-item"><div>'+ property.pivot.serial_number + ' ' + property.pivot.inventary_number + ' ' + property.brand + ' ' + property.model + ' ' + property.color + ' ' + property.general_description + '<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>';
+                        });
+                    }
+                    $('#user_properties').html(html);
+                });
+            }
 
             $(document).on('click', '.delete', function(){
                 var id = $(this).attr('data-id');

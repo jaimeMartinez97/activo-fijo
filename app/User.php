@@ -53,4 +53,8 @@ class User extends Authenticatable
     public function assignment(){
         return $this->belongsTo('App\Assignment');
     }
+
+    public function properties(){
+        return $this->belongsToMany('App\Property')->withPivot('inventary_number', 'serial_number')->withTimestamps();
+    }
 }

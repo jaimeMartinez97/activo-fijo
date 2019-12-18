@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Assignment;
 use App\ZoneCoordinator;
+use App\Property;
 
 use Illuminate\Http\Request;
 
@@ -20,8 +21,9 @@ class UserController extends Controller
         $users = User::with('assignment')->get();
         $assignments = Assignment::all();
         $zone_coordinators = ZoneCoordinator::all();
+        $properties = Property::with('object_expense', 'property_type')->get();
 
-        return view('users.index', compact('users', 'assignments', 'zone_coordinators'));
+        return view('users.index', compact('users', 'assignments', 'zone_coordinators', 'properties'));
     }
 
     /**

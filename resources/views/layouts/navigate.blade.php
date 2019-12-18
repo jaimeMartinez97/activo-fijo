@@ -2,7 +2,7 @@
     <div class="brand-sidebar">
         <h1 class="logo-wrapper">
             <a class="brand-logo darken-1" href="{{ url('/') }}">
-                {{-- <img src="{{ asset('images/inea.png') }}" alt="materialize logo"/> --}}
+                <img src="{{ asset('images/inea.png') }}" alt="materialize logo"/>
                 <span class="logo-text hide-on-med-and-down">Activo Fijo</span>
             </a>
             <a class="navbar-toggler" href="#">

@@ -66,6 +66,22 @@ Route::group(['middleware' => ['admin']], function () {
     });
 
     Route::resource('users', 'UserController');
+    Route::get('users_properties/{id}', function ($id) {
+        $user = User::find($id);
+        $properties = $user->properties()->get();
+
+        return response()->json($properties);
+    });
+    Route::post('users_add_property/{id}', function (Request $request, $id) {
+        $user = User::find($id);
+
+        $user->properties()->attach($request->property_id, [
+            'inventary_number' => $request->inventary_number,
+            'serial_number' => $request->serial_number
+        ]);
+
+        return response()->json(['response' => 'OK']);
+    });
     Route::resource('assignments', 'AssignmentController');
     Route::resource('properties', 'PropertyController');
     Route::resource('property_type', 'PropertyTypeController');
