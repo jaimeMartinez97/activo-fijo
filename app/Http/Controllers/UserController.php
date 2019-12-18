@@ -8,6 +8,7 @@ use App\ZoneCoordinator;
 use App\Property;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -24,6 +25,14 @@ class UserController extends Controller
         $properties = Property::with('object_expense', 'property_type')->get();
 
         return view('users.index', compact('users', 'assignments', 'zone_coordinators', 'properties'));
+    }
+
+    public function my_properties()
+    {
+        $my_pro = User::find(Auth::user()->id);
+        $my_pro->properties()->get();
+        //return response()->json($my_pro);
+        return view('properties.my_properti', compact('my_pro') );
     }
 
     /**

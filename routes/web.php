@@ -86,4 +86,5 @@ Route::group(['middleware' => ['admin']], function () {
     Route::resource('properties', 'PropertyController');
     Route::resource('property_type', 'PropertyTypeController');
     Route::resource('zone_coordinator', 'ZoneCoordinatorController');
+    Route::get('my_properties', 'UserController@my_properties');
 });
