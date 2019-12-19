@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
-
 use Illuminate\Support\Facades\Auth;
+
 use Closure;
 
-class AdminMiddleware
+class UserMiddleware
 {
     /**
      * Handle an incoming request.
@@ -20,7 +20,7 @@ class AdminMiddleware
             return redirect('login');
         }
 
-        if(Auth::user()->role_id == 1) {
+        if(Auth::user()->role_id == 2 || Auth::user()->role_id == 1) {
             return $next($request);
         }
 

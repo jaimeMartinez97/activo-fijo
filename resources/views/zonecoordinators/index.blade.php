@@ -41,7 +41,7 @@
                                                              <td>
                                                                  <a class="edit mb-6 btn-floating waves-effect waves-light blue lightrn-1 modal-trigger modificar" href="#modalUpdate" data-id="{{ $item->id }}">
                                                                      <i class="material-icons">create</i>
-                                                                     
+
                                                                  </a>
                                                                  <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 " href="#modalDelete" data-id="{{ $item->id }}">
                                                                      <i class="material-icons">delete</i>
@@ -81,33 +81,33 @@
                 <div class="row">
                     <div class="col s6">
                         <label>Nombre:</label>
-                        <input type="text" name="name">                        
-                    </div>                    
+                        <input type="text" name="name">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
                         <label>Direccion:</label>
-                        <input type="text" name="address">                        
-                    </div>                    
+                        <input type="text" name="address">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
                         <label>Colonia:</label>
-                        <input type="text" name="colony">                        
-                    </div>                    
+                        <input type="text" name="colony">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
                         <label>Codigo postal:</label>
-                        <input type="text" name="zip_code" >                        
-                    </div>                    
+                        <input type="text" name="zip_code" >
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
                         <label>Telefono:</label>
-                        <input type="text" name="phone">                        
-                    </div>                    
-                </div>            
+                        <input type="text" name="phone">
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="modal-action mb-6 btn waves-effect waves-light green darken-1">Aceptar</button>
@@ -126,32 +126,32 @@
                 <div class="row">
                     <div class="col s6">
                         <label>Nombre:</label>
-                        <input type="text" name="name" id="name">                        
-                    </div>                    
+                        <input type="text" name="name" id="name">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
                         <label>Direccion:</label>
-                        <input type="text" name="address" id="address">                        
-                    </div>                    
+                        <input type="text" name="address" id="address">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
                         <label>Colonia:</label>
-                        <input type="text" name="colony" id="colony">                        
-                    </div>                    
+                        <input type="text" name="colony" id="colony">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
                         <label>Codigo postal:</label>
-                        <input type="text" name="zip_code" id="zip_code">                        
-                    </div>                    
+                        <input type="text" name="zip_code" id="zip_code">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
                         <label>Telefono:</label>
-                        <input type="text" name="phone" id="phone">                        
-                    </div>                    
+                        <input type="text" name="phone" id="phone">
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -160,23 +160,24 @@
             </div>
         </form>
     </div>
-    
+
 
 @endsection
 @section('level')
-    <script>        
-        $('.modificar').click(function(){
-                let id=$(this).attr("data-id")
-                $('#formUpdate').attr("action",'{{url("zone_coordinator")}}/'+id)
-                $('#tipo').val("cargando...")
-                $.get('{{url("zone_coordinator")}}/'+id,function(zonecor){
-                    $('#name').val(zonecor.name)        
-                    $('#address').val(zonecor.address)     
-                    $('#colony').val(zonecor.colony)   
-                    $('#zip_code').val(zonecor.zip_code)   
-                    $('#phone').val(zonecor.phone)                  
-                })
+    <script>
+        $(document).on('click', '.modificar', function(){
+            let id=$(this).attr("data-id")
+            $('#formUpdate').attr("action",'{{url("zone_coordinator")}}/'+id)
+            $('#tipo').val("cargando...")
+            $.get('{{url("zone_coordinator")}}/'+id,function(zonecor){
+                console.log(zonecor)
+                $('#name').val(zonecor.name)
+                $('#address').val(zonecor.address)
+                $('#colony').val(zonecor.colony)
+                $('#zip_code').val(zonecor.zip_code)
+                $('#phone').val(zonecor.phone)
             })
+        })
         $(document).on('click', '.delete', function(){
             var id = $(this).attr('data-id');
             // $('#formDelete').attr('action', '{{ url("property_type") }}/' + id);
@@ -187,7 +188,7 @@
                 $.ajax({
                         url: "{{url('zone_coordinator')}}/"+id,
                         type: "post",
-                        data:{ 
+                        data:{
                             _token:'{{ csrf_token() }}',_method:"delete"
                         },
                         dataType: 'json',

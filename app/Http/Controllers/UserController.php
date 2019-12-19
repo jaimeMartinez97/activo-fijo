@@ -29,9 +29,9 @@ class UserController extends Controller
 
     public function my_properties()
     {
-        $my_pro = User::find(Auth::user()->id);
-        $my_pro->properties()->get();
-        //return response()->json($my_pro);
+        $user = User::find(Auth::user()->id);
+        $my_pro = $user->properties()->get();
+        // return response()->json($my_pro);
         return view('properties.my_properti', compact('my_pro') );
     }
 

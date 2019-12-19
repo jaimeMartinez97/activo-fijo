@@ -10,7 +10,7 @@
                     <div class="col s12">
                         <div class="card">
                             <div class="card-content">
-                                
+
                                 <h4 class="card-title">Mis Bienes registrados</h4>
                                 <div class="row">
                                     <div class="col s12">
@@ -54,8 +54,8 @@
                                                             </td>
                                                             <td>{{ $item->general_description }}</td>
                                                             <td>{{ $item->full_description }}</td>
-                                                            <td>{{ empty($item->vehicle_description) ? 'No aplica' : $property->vehicle_description }}</td>
-                                                            
+                                                            <td>{{ empty($item->vehicle_description) ? 'No aplica' : $item->vehicle_description }}</td>
+
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
