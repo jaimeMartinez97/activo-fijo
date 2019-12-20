@@ -55,6 +55,6 @@ class User extends Authenticatable
     }
 
     public function properties(){
-        return $this->belongsToMany('App\Property')->with('property_type', 'object_expense')->withPivot('inventary_number', 'serial_number')->withTimestamps();
+        return $this->belongsToMany('App\Property')->with('property_type', 'object_expense', 'inventaries')->withTimestamps();
     }
 }

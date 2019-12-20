@@ -111,26 +111,22 @@
                     <select id="property_id" name="property_id" class="browser-default" required>
                         <option value="0" selected>Selecciona un bien</option>
                         @foreach ($properties as $property)
-                            <option value="{{ $property->id }}">
-                                {{ $property->property_type->type }} -
-                                {{ $property->object_expense->COG }} -
-                                {{ $property->brand }}
-                                {{ $property->model }}
-                                {{ $property->color }}
-                                {{ $property->general_description }}
-                            </option>
+                            @foreach ($property->inventaries as $inventary)
+                                <option value="{{ $property->id }}">
+                                    {{ $inventary->inventary_number }}
+                                    {{ $inventary->serial_number }}
+                                    {{ $property->property_type->type }}
+                                    {{ $property->object_expense->COG }}
+                                    {{ $property->brand }}
+                                    {{ $property->model }}
+                                    {{ $property->color }}
+                                    {{ $property->general_description }}
+                                </option>
+                            @endforeach
                         @endforeach
                     </select>
                 </div>
-                <div class="input-field col s6">
-                    <input id="serial_number" name="serial_number" type="text" class="validate" required>
-                    <label>Número de serie</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="inventary_number" name="inventary_number" type="text" class="validate" required>
-                    <label>Número de inventario</label>
-                </div>
-                <div class="col s6">
+                <div class="col s12">
                     <button id="add_property" class="modal-action mb-6 btn waves-effect waves-light green darken-1">Agregar</button>
                 </div>
                 <div class="col s12">
@@ -346,14 +342,10 @@
                     type: "POST",
                     data:{
                         _token:'{{ csrf_token() }}',
-                        inventary_number: $('#inventary_number').val(),
-                        serial_number: $('#serial_number').val(),
                         property_id: $('#property_id').val(),
                     },
                     dataType: 'json',
                     success: function(json){
-                        $('#inventary_number').val('');
-                        $('#serial_number').val('');
                         $('#property_id').val(0);
                         load_properties(id);
                     },
@@ -371,7 +363,9 @@
                         html += '<li class="collection-item"><div>No hay bienes asignados</div></li>';
                     }else{
                         $.each(properties, function(key, property){
-                            html += '<li class="collection-item"><div>'+ property.pivot.serial_number + ' ' + property.pivot.inventary_number + ' ' + property.brand + ' ' + property.model + ' ' + property.color + ' ' + property.general_description + '<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>';
+                            $.each(property.inventaries, function(key, inventary){
+                                html += '<li class="collection-item"><div>'+ inventary.serial_number + ' ' + inventary.inventary_number + ' ' + property.brand + ' ' + property.model + ' ' + property.color + ' ' + property.general_description + '<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>';
+                            });
                         });
                     }
                     $('#user_properties').html(html);

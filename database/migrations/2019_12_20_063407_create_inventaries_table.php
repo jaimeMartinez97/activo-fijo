@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePropertyUserTable extends Migration
+class CreateInventariesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreatePropertyUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('property_user', function (Blueprint $table) {
+        Schema::create('inventaries', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('inventary_number');
+            $table->string('serial_number');
             $table->unsignedBigInteger('property_id');
             $table->foreign('property_id')->references('id')->on('properties');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreatePropertyUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('property_user');
+        Schema::dropIfExists('inventaries');
     }
 }

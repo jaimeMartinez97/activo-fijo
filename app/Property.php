@@ -27,4 +27,8 @@ class Property extends Model
     public function object_expense() {
         return $this->belongsTo('App\ObjectExpense', 'object_expenses_id');
     }
+
+    public function inventaries() {
+        return $this->hasMany('App\Inventary');
+    }
 }

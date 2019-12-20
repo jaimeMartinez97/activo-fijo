@@ -19,6 +19,23 @@
                                 <div class="row">
                                     <div class="col s12">
                                         <div class="container">
+                                            <form action="{{ url('properties_filter') }}" method="POST">
+                                                @csrf
+                                                <div class="input-field col s12 l3">
+                                                    <input id="serial_number" name="serial_number" type="text" class="validate" value="{{ $filter ? $serial_number : '' }}">
+                                                    <label>Número de serie</label>
+                                                </div>
+                                                <div class="input-field col s12 l3">
+                                                    <input id="inventary_number" name="inventary_number" type="text" class="validate" value="{{ $filter ? $inventary_number : '' }}">
+                                                    <label>Número de inventario</label>
+                                                </div>
+                                                <div class="input-field col s12 l6">
+                                                    <button style="margin-bottom: 10px;" class="btn waves-effect blue waves-light">filtrar</button>
+                                                    @if ($filter)
+                                                        <a href="{{ url('properties') }}" style="margin-bottom: 10px;" class="btn waves-effect blue waves-light">Quitar filtro</a>
+                                                    @endif
+                                                </div>
+                                            </form>
                                             <table id="page-length-option" class="display">
                                                 <thead>
                                                     <tr>
@@ -67,6 +84,9 @@
                                                                 <a class="delete mb-6 btn-floating waves-effect waves-light red lightrn-1 modal-trigger" href="#modalDelete" data-id="{{ $property->id }}">
                                                                     <i class="material-icons">delete</i>
                                                                 </a>
+                                                                <a class="add mb-6 btn-floating waves-effect waves-light green lightrn-1 modal-trigger" href="#modalAdd" data-id="{{ $property->id }}">
+                                                                    <i class="material-icons">work</i>
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -98,6 +118,37 @@
             </div>
         </div>
     </div>
+
+    <div id="modalAdd" class="modal">
+        <div class="modal-content">
+            <h4>Asignar un inventario</h4>
+            <p>Ingresa los datos correspondientes asignar un inventario</p>
+            @csrf
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="serial_number" name="serial_number" type="text" class="validate" required>
+                    <label>Número de serie</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="inventary_number" name="inventary_number" type="text" class="validate" required>
+                    <label>Número de inventario</label>
+                </div>
+                <div class="col s6">
+                    <button id="add_inventary" class="modal-action mb-6 btn waves-effect waves-light green darken-1">Agregar</button>
+                </div>
+                <div class="col s12">
+                    <ul id="property_inventaries" class="collection with-header">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <a href="#!" class="modal-action mb-6 btn waves-effect waves-light red darken-1 modal-close">Cerrar</a>
+        </div>
+    </div>
+
     <div id="modalRegister" class="modal">
         <form class="col s12" action="{{ url('properties') }}" method="POST">
             <div class="modal-content">
@@ -253,6 +304,50 @@
             // $(".card-alert").fadeTo(3500, 600).slideUp(400, function () {
             //     $(".card-alert").slideUp(600);
             // });
+
+            $(document).on('click', '.add', function(){
+                let id = $(this).attr('data-id');
+                load_properties(id);
+                $('#add_inventary').attr('data-id', id);
+            });
+
+            $('#add_inventary').click(function(){
+                let id = $(this).attr('data-id');
+                $.ajax({
+                    url: "{{ url('properties_add_inventary') }}/" + id,
+                    type: "POST",
+                    data:{
+                        _token:'{{ csrf_token() }}',
+                        inventary_number: $('#inventary_number').val(),
+                        serial_number: $('#serial_number').val(),
+                    },
+                    dataType: 'json',
+                    success: function(json){
+                        $('#inventary_number').val('');
+                        $('#serial_number').val('');
+                        load_properties(id);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.responseText);
+                        console.log(thrownError);
+                    }
+                });
+            });
+
+            function load_properties(id) {
+                $.get('{{ url('properties_inventaries') }}/' + id, function(inventaries){
+                    let html = '<li class="collection-header"><h4>Inventarios asignados</h4></li>';
+                    if(inventaries.length == 0){
+                        html += '<li class="collection-item"><div>No hay inventarios asignados</div></li>';
+                    }else{
+                        $.each(inventaries, function(key, inventary){
+                            html += '<li class="collection-item"><div>'+ inventary.serial_number + ' ' + inventary.inventary_number +'<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>';
+                        });
+                    }
+                    $('#property_inventaries').html(html);
+                });
+            }
+
             $('#selectType').change(function(){
                 let val = $(this).val();
 

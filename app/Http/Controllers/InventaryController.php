@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Property;
-use App\PropertyType;
-use App\ObjectExpense;
+use App\Inventary;
 use Illuminate\Http\Request;
 
-class PropertyController extends Controller
+class InventaryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +14,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Property::with('property_type', 'object_expense', 'inventaries')->get();
-        $property_types = PropertyType::all();
-        $object_expenses = ObjectExpense::all();
-        $serial_number = '';
-        $inventary_number = '';
-        $filter = false;
-
-        return view('properties.index', compact('properties', 'property_types', 'object_expenses', 'filter', 'serial_number', 'inventary_number'));
+        //
     }
 
     /**
@@ -44,29 +35,27 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        Property::create($request->all());
-
-        return redirect('properties');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Property  $property
+     * @param  \App\Inventary  $inventary
      * @return \Illuminate\Http\Response
      */
-    public function show(Property $property)
+    public function show(Inventary $inventary)
     {
-        return response()->json($property);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Property  $property
+     * @param  \App\Inventary  $inventary
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit(Inventary $inventary)
     {
         //
     }
@@ -75,23 +64,21 @@ class PropertyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Property  $property
+     * @param  \App\Inventary  $inventary
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+    public function update(Request $request, Inventary $inventary)
     {
-        $property->update($request->all());
-
-        return redirect('properties');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Property  $property
+     * @param  \App\Inventary  $inventary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Property $property)
+    public function destroy(Inventary $inventary)
     {
         //
     }
